@@ -1,0 +1,29 @@
+@theme inline {
+    /* fonts */
+    --font-sans: var(--font-inter);
+    --font-heading: var(--font-plus-jakarta);
+
+    /* colors */
+    --color-primary: var(--brand-primary);
+    --color-primary-light: var(--brand-primary-light);
+    --color-secondary: var(--brand-secondary);
+    --color-secondary-light: var(--brand-secondary-light);
+
+    --color-text-dark: var(--text-dark);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-tertiary: var(--text-tertiary);
+
+    --color-page-bg: var(--page-bg-clr);
+
+    /* radius */
+    --radius-brand-8: 8px;
+    --radius-brand-12: 12px;
+    --radius-brand-16: 16px;
+
+    /* spacing */
+    --spacing-brand: 16px;
+    --spacing-brand-20: 20px;
+
+    /* shadows */
+    --shadow-primary-dark: 0 8px 24px -8px #111;
+}
