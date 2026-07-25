@@ -1,13 +1,11 @@
-import SectionContainer from "../section/SectionContainer"
+import React from 'react'
 
 type Props = {}
 
 const Footer = (props: Props) => {
-    return (
-        <SectionContainer>
-            Footer
-        </SectionContainer>
-    )
+  return (
+    <div>Footer</div>
+  )
 }
 
 export default Footer

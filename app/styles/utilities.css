@@ -26,19 +26,15 @@
     padding-block: var(--container-y-padding);
 }
 
-/* @utility bg-gradient-btn {
-    background-image: var(--gradient-btn-primary);
+@utility bg-gradient-primary-tb {
+    background-image: var(--gradient-primary-tb);
 }
 
-@utility bg-gradient-about-cta {
-    background-image: var(--gradient-about-cta);
+@utility bg-gradient-primary-rl {
+    background-image: var(--gradient-primary-rl);
 }
 
-@utility bg-gradient-about-hero {
-    background-image: var(--gradient-about-hero);
-}
-
-@utility default-card {
+/* @utility default-card {
     background-color: white;
     border: 1px solid var(--color-border-clr);
     border-radius: var(--radius-card);

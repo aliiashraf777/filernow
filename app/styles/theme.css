@@ -6,6 +6,7 @@
     /* colors */
     --color-primary: var(--brand-primary);
     --color-primary-light: var(--brand-primary-light);
+    --color-primary-lighter: var(--brand-primary-lighter);
     --color-secondary: var(--brand-secondary);
     --color-secondary-light: var(--brand-secondary-light);
 
@@ -14,6 +15,9 @@
     --color-text-tertiary: var(--text-tertiary);
 
     --color-page-bg: var(--page-bg-clr);
+
+    /* border-clr */
+    --color-border-clr: var(--border-clr);
 
     /* radius */
     --radius-brand-8: 8px;
@@ -25,5 +29,10 @@
     --spacing-brand-20: 20px;
 
     /* shadows */
-    --shadow-primary-dark: 0 8px 24px -8px #111;
+    /* --shadow-primary-btn: 0 8px 24px -8px #111111/10; */
+    --shadow-primary-btn: 0 8px 24px -8px rgba(17, 17, 17, 0.1);
+
+    /* gradients */
+    --gradient-primary-tb: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    --gradient-primary-rl: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-light) 100%);
 }

@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col text-text-dark bg-page-bg">
         <Header />
 
         {children}

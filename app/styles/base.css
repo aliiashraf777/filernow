@@ -23,6 +23,10 @@
         /* brand colors */
         --brand-primary: #C8102E;
         --brand-primary-light: #FFB4C0;
+        /* --brand-primary-lighter: #C8102E/10; */
+        --brand-primary-lighter: #C8102E1A;
+        /* ~10% alpha */
+        /* --brand-primary-lightest: #C8102E/10; */
         --brand-secondary: #34B08D;
         --brand-secondary-light: #65c5aa;
 
@@ -31,7 +35,8 @@
         --text-secondary: #4B5563;
         --text-tertiary: #F9FAFB;
 
-        --page-bg-clr: #c6c6c6;
+        /* --page-bg-clr: #c6c6c6; */
+        --page-bg-clr: #fafafa;
 
         /* borders */
         --border-clr: #E5E7EB;
@@ -52,13 +57,13 @@
     h4,
     h5,
     h6 {
-        color: var(--text-dark);
         font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+        color: var(--text-dark);
     }
 
     p,
     span {
-        color: var(--text-dark);
         font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+        color: var(--text-secondary);
     }
 }
