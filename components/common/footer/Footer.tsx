@@ -1,10 +1,16 @@
-import React from 'react'
+import FooterMain from './FooterMain'
+import FooterCopyright from './FooterCopyright'
+
 
 type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <div>Footer</div>
+    <footer className="relative flex flex-col relative bg-white">
+      <FooterMain />
+
+      <FooterCopyright />
+    </footer>
   )
 }
 

@@ -3,6 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
+import BeforeFooter from "@/components/common/footer/BeforeFooter";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -34,6 +35,7 @@ export default function RootLayout({
 
         {children}
 
+        <BeforeFooter />
         <Footer />
       </body>
     </html>

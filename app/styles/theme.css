@@ -12,12 +12,15 @@
 
     --color-text-dark: var(--text-dark);
     --color-text-secondary: var(--text-secondary);
+    --color-text-secondary-muted: var(--text-secondary-muted);
     --color-text-tertiary: var(--text-tertiary);
+    --color-text-muted: var(--text-muted);
 
     --color-page-bg: var(--page-bg-clr);
 
     /* border-clr */
     --color-border-clr: var(--border-clr);
+    --color-border-clr-dark: var(--border-clr-dark);
 
     /* radius */
     --radius-brand-8: 8px;

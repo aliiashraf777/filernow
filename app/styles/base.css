@@ -33,13 +33,17 @@
         /* text & neutral colors */
         --text-dark: #111111;
         --text-secondary: #4B5563;
+        --text-secondary-muted: #6B7280;
+        --text-secondary-muter: #9CA3AF;
         --text-tertiary: #F9FAFB;
+        --text-muted: rgba(17, 17, 17, 0.5);
 
         /* --page-bg-clr: #c6c6c6; */
         --page-bg-clr: #fafafa;
 
         /* borders */
         --border-clr: #E5E7EB;
+        --border-clr-dark: rgba(172, 172, 172, 0.3);
 
     }
 
@@ -58,12 +62,12 @@
     h5,
     h6 {
         font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
-        color: var(--text-dark);
+        /* color: var(--text-dark); */
     }
 
     p,
     span {
         font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-        color: var(--text-secondary);
+        /* color: var(--text-secondary); */
     }
 }

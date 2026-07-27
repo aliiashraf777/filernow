@@ -2,8 +2,8 @@ import Button from "@/components/btns/Button"
 import SectionContainer from "../section/SectionContainer"
 import Image from "next/image"
 import { FileBadge, Menu } from "lucide-react"
-import { menuData } from "@/data/appData"
 import Link from "next/link"
+import DeskMenu from "./DeskMenu"
 
 type Props = {}
 
@@ -23,23 +23,12 @@ const MenuBar = (props: Props) => {
                         alt="header_logo"
                         width={58}
                         height={58}
+                        priority
                         className="-ml-1"
                     />
                 </Link>
 
-                <div className="hidden md:flex items-center gap-9">
-                    {
-                        menuData.map((menu, idx) => (
-                            <Link
-                                key={menu.id}
-                                href={menu.link}
-                                className={`para-small text-text-secondary font-medium ${idx === 0 && "text-primary"} hover:text-primary`}
-                            >
-                                {menu.label}
-                            </Link>
-                        ))
-                    }
-                </div>
+                <DeskMenu />
 
                 <Button
                     className="hidden md:flex"
