@@ -49,10 +49,14 @@
 
     html {
         scroll-behavior: smooth;
+        overflow-x: clip;
     }
 
     body {
         font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+        width: 100%;
+        max-width: 1440px;
+        margin-inline: auto;
     }
 
     h1,

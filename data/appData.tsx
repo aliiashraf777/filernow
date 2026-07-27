@@ -100,3 +100,16 @@ export const footerQuickLinks: IFooterLinkItem[] = [
     { label: "FAQ", href: "/faq" },
     { label: "Calculator", href: "/calculator" },
 ]
+
+export interface IHeroStateItems {
+    to: number,
+    suffix: string,
+    label: string,
+}
+
+export const heroStatsData: IHeroStateItems[] = [
+    { to: 10000, suffix: "+", label: "Our Clients" },
+    { to: 1, suffix: " Day", label: "Fast Filing" },
+    { to: 15, suffix: "+", label: "Services" },
+    { to: 99, suffix: "%", label: "Satisfaction" },
+]

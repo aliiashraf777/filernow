@@ -1,3 +1,4 @@
+// components/common/section/SectionContainer.tsx
 import { cn } from "@/utils/cn"
 
 type Props = {
@@ -5,13 +6,22 @@ type Props = {
     sectionClass?: string,
     paddingClass?: string,
     containerClass?: string,
+    bgImage?: React.ReactNode,
 }
 
-const SectionContainer = ({ children, sectionClass, paddingClass, containerClass }: Props) => {
+const SectionContainer = ({ children, sectionClass, containerClass, bgImage, paddingClass }: Props) => {
     return (
-        <section className={cn("w-full", sectionClass)}>
-            <div className={cn("container-x-padding", paddingClass)}>
-                <div className={cn("container-custom", containerClass)}>
+        <section
+            className={cn("w-full relative", sectionClass)}
+        >
+            {bgImage}
+
+            <div
+                className={cn("container-x-padding relative", paddingClass)}
+            >
+                <div
+                    className={cn("container-custom", containerClass)}
+                >
                     {children}
                 </div>
             </div>
