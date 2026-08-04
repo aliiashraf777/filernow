@@ -4,8 +4,8 @@ import SectionContainer from "@/components/common/section/SectionContainer"
 import Button from "@/components/btns/Button"
 import { ArrowRight } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
-import InfoBadge from "../ui/InfoBadge"
-import StatCounter from "../ui/StatsCounter"
+import InfoBadge from "../ui-custom/InfoBadge"
+import StatCounter from "../ui-custom/StatsCounter"
 import { heroStatsData } from "@/data/appData"
 import { cn } from "@/utils/cn"
 
@@ -53,7 +53,7 @@ const Hero = (props: Props) => {
                     fill
                     priority
                     style={{ objectFit: "cover" }}
-                    className="-z-10"
+                    className="-z-10 hero-bg-image"
                 />
 
                 {/* desktop-only bleeding panel — lives at section level, not inside the padded container */}
@@ -68,7 +68,6 @@ const Hero = (props: Props) => {
                 {/* left content */}
                 <div className="container-y-padding flex flex-col gap-7">
                     <InfoBadge
-                        className="bg-white"
                         label="Online Tax Filing Portal"
                     />
 
@@ -101,7 +100,7 @@ const Hero = (props: Props) => {
                         </Button>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-7 divide-x divide-[#EAE0E0]">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-7 divide-x divide-stat-divider-clr">
                         {heroStatsData.map((stat) => (
                             <StatCounter
                                 key={stat.label}

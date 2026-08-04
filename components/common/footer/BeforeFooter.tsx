@@ -8,7 +8,7 @@ type Props = {}
 const BeforeFooter = (props: Props) => {
     return (
         <SectionContainer
-            containerClass="container-y-padding"
+            containerClass="container-y-padding pt-0"
         >
             <div className="w-full flex items-center justify-center bg-primary/10 rounded-brand-16 py-[50px] px-3 relative">
                 {/* circle */}

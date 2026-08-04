@@ -1,33 +1,30 @@
-// hooks/useCountUp.ts
 "use client"
+
 import { useEffect, useRef, useState } from "react"
+import { useInView } from "@/hooks/useInView"
 
 export function useCountUp(target: number, duration = 1500) {
     const [value, setValue] = useState(0)
-    const ref = useRef<HTMLDivElement>(null)
+    const { ref, inView } = useInView<HTMLDivElement>(0.4)
     const hasRun = useRef(false)
 
     useEffect(() => {
-        const node = ref.current
-        if (!node) return
+        if (!inView || hasRun.current) return
+        hasRun.current = true
 
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting && !hasRun.current) {
-                hasRun.current = true
-                const start = performance.now()
-                const tick = (now: number) => {
-                    const progress = Math.min((now - start) / duration, 1)
-                    setValue(Math.floor(progress * target))
-                    if (progress < 1) requestAnimationFrame(tick)
-                }
-                requestAnimationFrame(tick)
-                observer.disconnect()
-            }
-        }, { threshold: 0.4 })
+        const start = performance.now()
+        let frameId: number
 
-        observer.observe(node)
-        return () => observer.disconnect()
-    }, [target, duration])
+        const tick = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1)
+            setValue(Math.floor(progress * target))
+            if (progress < 1) frameId = requestAnimationFrame(tick)
+        }
+
+        frameId = requestAnimationFrame(tick)
+
+        return () => cancelAnimationFrame(frameId)
+    }, [inView, target, duration])
 
     return { value, ref }
 }

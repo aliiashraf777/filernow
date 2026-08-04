@@ -13,14 +13,19 @@
     --color-text-dark: var(--text-dark);
     --color-text-secondary: var(--text-secondary);
     --color-text-secondary-muted: var(--text-secondary-muted);
+    --color-text-secondary-muter: var(--text-secondary-muter);
     --color-text-tertiary: var(--text-tertiary);
     --color-text-muted: var(--text-muted);
 
     --color-page-bg: var(--page-bg-clr);
+    --color-card-bg-clr: var(--card-bg-clr);
 
     /* border-clr */
     --color-border-clr: var(--border-clr);
     --color-border-clr-dark: var(--border-clr-dark);
+    --color-border-card-clr: var(--border-card-clr);
+
+    --color-stat-divider-clr: var(--stat-divider-clr);
 
     /* radius */
     --radius-brand-8: 8px;
@@ -34,8 +39,19 @@
     /* shadows */
     /* --shadow-primary-btn: 0 8px 24px -8px #111111/10; */
     --shadow-primary-btn: 0 8px 24px -8px rgba(17, 17, 17, 0.1);
+    --shadow-tool-card: 0px 4px 4px 0px rgba(200, 16, 46, 0.16);
+    --shadow-service-card: 0px 4px 16px 0px rgba(200, 16, 46, 0.25);
+    --shadow-icon-card: 0 4px 24px -8px rgba(17, 17, 17, 0.1);
+
 
     /* gradients */
     --gradient-primary-tb: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-primary-light) 100%);
     --gradient-primary-rl: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    --gradient-how-it-works: linear-gradient(90deg, var(--gradient-how-it-works-start) 0%, var(--brand-primary) 100%);
+
+    /* accordion */
+    --animate-accordion-collapse: accordion-collapse 200ms ease-out;
+    --animate-accordion-expand: accordion-expand 200ms ease-out;
+
+    --color-dark-surface-bg: var(--dark-surface-bg);
 }

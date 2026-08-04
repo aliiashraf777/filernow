@@ -1,16 +1,28 @@
+"use client"
+
 import Button from "@/components/btns/Button"
 import SectionContainer from "../section/SectionContainer"
 import Image from "next/image"
 import { FileBadge, Menu } from "lucide-react"
 import Link from "next/link"
 import DeskMenu from "./DeskMenu"
+import ThemeToggle from "@/components/theme/ThemeToggle"
+import { cn } from "@/utils/cn"
+import { useStickyHeader } from "@/hooks/useStickyHeader"
 
 type Props = {}
 
 const MenuBar = (props: Props) => {
+
+    // on scroll header stick
+    const { isScrolled } = useStickyHeader(".menubar")
+
     return (
         <SectionContainer
-            sectionClass="bg-white"
+            sectionClass={cn(
+                "menubar bg-whitex bg-background border-b border-border-clr/25",
+                isScrolled && "scrolled",
+            )}
             containerClass="py-1.5"
         >
             <div className="flex justify-between items-center">
@@ -30,21 +42,25 @@ const MenuBar = (props: Props) => {
 
                 <DeskMenu />
 
-                <Button
-                    className="hidden md:flex"
-                >
-                    Become a filer
-                    <FileBadge
-                        size={16}
-                    />
-                </Button>
+                <div className="flex items-center gap-5">
+                    <ThemeToggle />
 
-                <Button
-                    variant="primary-light"
-                    className="border-transparent p-2 flex md:hidden"
-                >
-                    <Menu size={20} />
-                </Button>
+                    <Button
+                        className="hidden md:flex"
+                    >
+                        Become a filer
+                        <FileBadge
+                            size={16}
+                        />
+                    </Button>
+
+                    <Button
+                        variant="primary-light"
+                        className="border-transparent p-2 flex md:hidden"
+                    >
+                        <Menu size={20} />
+                    </Button>
+                </div>
             </div>
         </SectionContainer>
     )

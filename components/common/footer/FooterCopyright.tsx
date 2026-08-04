@@ -1,5 +1,5 @@
 import SectionContainer from '../section/SectionContainer'
-import TopBarContactItem from '@/components/ui/TopBarContactItem'
+import TopBarContactItem from '@/components/ui-custom/TopBarContactItem'
 import { FaUserShield } from 'react-icons/fa'
 import { Handshake } from 'lucide-react'
 

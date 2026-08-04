@@ -7,7 +7,7 @@ type ButtonSizeTy = 'normal' | 'full'
 
 function variantClasses(variant: ButtonVariantTy, size: ButtonSizeTy, className?: string) {
     return cn(
-        "w-max h-max flex items-center gap-2 rounded-brand-8 px-5 py-3 para-small font-semibold font-sans capitalize cursor-pointer border border-transparent default-transition",
+        "w-max h-max flex items-center gap-2 rounded-brand-8 px-5 py-3 para-small font-semibold font-sans capitalize cursor-pointer border border-transparent default-transition relative overflow-hidden",
 
         size === "full" && "w-full flex-1",
 
@@ -17,11 +17,13 @@ function variantClasses(variant: ButtonVariantTy, size: ButtonSizeTy, className?
 
         variant === "primary-light" && "bg-primary/10 text-primary border-primary hover:bg-primary/15",
 
-        variant === "white" && "bg-white text-text-dark hover:bg-white/90 border-border-clr",
+        variant === "white" && "bg-background text-text-dark hover:bg-background/90 border-border-clr",
 
         variant === "blur" && "border-white/20 bg-white/5 backdrop-blur-xl text-white",
 
         variant === "ghost" && "bg-transparent border-border-clr text-white/80",
+
+        "btn-generic",
 
         className,
     )
@@ -48,7 +50,9 @@ const Button = ({
                 disabled && "opacity-50 cursor-not-allowed pointer-events-none",
             )}
         >
-            {children}
+            <span className="relative z-10 flex items-center gap-2">
+                {children}
+            </span>
         </button>
     )
 }
@@ -76,7 +80,9 @@ export const AnchorBtn = ({ href, openOnNewTab, label, icon, variant = 'primary'
             aria-label={label}
             className={variantClasses(variant, size, className)}
         >
-            {icon}{label}
+            <span className="relative z-10 flex items-center gap-2">
+                {icon}{label}
+            </span>
         </a>
     )
 }
@@ -99,7 +105,9 @@ export const LinkBtn = ({ href, label, icon, variant = 'primary', size = 'normal
             href={href}
             className={variantClasses(variant, size, className)}
         >
-            {icon}{label}
+            <span className="relative z-10 flex items-center gap-2">
+                {icon}{label}
+            </span>
         </Link>
     )
 }

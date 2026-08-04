@@ -17,7 +17,8 @@
         /* layout */
         --container-width: 1180px;
         /* --container-x-padding: 130px; */
-        --container-x-padding: clamp(15px, 10.8vw - 25.5px, 130px);
+        --container-x-padding: clamp(20px, 10.8vw - 25.5px, 130px);
+        --container-x-padding: clamp(20px, 7.8vw - 25.5px, 130px);
         --container-y-padding: 60px;
 
         /* brand colors */
@@ -40,11 +41,18 @@
 
         /* --page-bg-clr: #c6c6c6; */
         --page-bg-clr: #fafafa;
+        --card-bg-clr: #F8F9FA;
 
         /* borders */
         --border-clr: #E5E7EB;
         --border-clr-dark: rgba(172, 172, 172, 0.3);
+        --border-card-clr: #F3F4F6;
 
+        --stat-divider-clr: #EAE0E0;
+        --gradient-how-it-works-start: #FFFFFF;
+
+        /* theme.css :root new token, deliberately no .dark override, it's constant by design */
+        --dark-surface-bg: #0A0F1F;
     }
 
     html {
@@ -73,5 +81,38 @@
     span {
         font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
         /* color: var(--text-secondary); */
+    }
+
+    .dark .hero-bg-image {
+        filter: invert(1) hue-rotate(180deg) brightness(0.8);
+    }
+
+    /* const STICKY_HEADER_HEIGHT change it it constants */
+    .menubar {
+        width: 100%;
+        transition: all 0.3s ease-out;
+    }
+
+    /* moved in @layer utitlies due to layer order */
+    /* .menubar.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: var(--background);
+        animation: fadeInDown 0.5s ease;
+    } */
+
+    @keyframes fadeInDown {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 }

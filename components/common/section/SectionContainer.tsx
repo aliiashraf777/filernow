@@ -7,21 +7,28 @@ type Props = {
     paddingClass?: string,
     containerClass?: string,
     bgImage?: React.ReactNode,
+    backgroundGradient?: string, // e.g. 'linear-gradient(270deg, #C8102E 0%, #FFFFFF 100%)'
 }
 
-const SectionContainer = ({ children, sectionClass, containerClass, bgImage, paddingClass }: Props) => {
+const SectionContainer = ({
+    children,
+    sectionClass,
+    containerClass,
+    bgImage,
+    paddingClass,
+    backgroundGradient,
+}: Props) => {
     return (
-        <section
-            className={cn("w-full relative", sectionClass)}
-        >
-            {bgImage}
-
-            <div
-                className={cn("container-x-padding relative", paddingClass)}
-            >
+        <section className={cn("w-full relative", sectionClass)}>
+            {backgroundGradient && (
                 <div
-                    className={cn("container-custom", containerClass)}
-                >
+                    className="absolute inset-0 -z-10"
+                    style={{ background: backgroundGradient }}
+                />
+            )}
+            {bgImage}
+            <div className={cn("w-full container-x-padding relative", paddingClass)}>
+                <div className={cn("container-custom", containerClass)}>
                     {children}
                 </div>
             </div>

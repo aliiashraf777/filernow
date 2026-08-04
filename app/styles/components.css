@@ -1,5 +1,18 @@
-/* @layer components {
-    .box {
-        @apply bg-red-600;
+/* app/styles/components.css */
+@layer components {
+    .btn-generic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -200%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 70%);
+        transition: left 0.8s ease;
+        pointer-events: none;
     }
-} */
+
+    .btn-generic:hover::before {
+        left: 100%;
+    }
+}

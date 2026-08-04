@@ -1,16 +1,16 @@
 import { FiMessageCircle } from "react-icons/fi"
 import SectionContainer from "../section/SectionContainer"
 import { IoCallOutline, IoMailUnreadOutline } from "react-icons/io5"
-import TopBarContactItem from "@/components/ui/TopBarContactItem"
+import TopBarContactItem from "@/components/ui-custom/TopBarContactItem"
 
 type Props = {}
 
 const TopBar = (props: Props) => {
   return (
     <SectionContainer
-      sectionClass="bg-text-dark"
+      sectionClass="bg-text-darkx bg-foreground"
     >
-      <div className="w-full flex justify-center md:justify-between items-center text-white py-3">
+      <div className="w-full flex justify-center md:justify-between items-center text-background py-3">
         <TopBarContactItem
           icon={<FiMessageCircle size={15} />}
           label="Click here - WhatsApp"

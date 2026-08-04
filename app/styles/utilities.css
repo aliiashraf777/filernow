@@ -1,3 +1,15 @@
+@layer utilities {
+    .menubar.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: var(--background);
+        animation: fadeInDown 0.5s ease;
+    }
+}
+
 @utility container-custom {
     width: 100%;
     max-width: var(--container-width);
@@ -32,6 +44,10 @@
 
 @utility bg-gradient-primary-rl {
     background-image: var(--gradient-primary-rl);
+}
+
+@utility bg-gradient-how-it-works {
+    background-image: var(--gradient-how-it-works);
 }
 
 /* @utility default-card {
@@ -162,5 +178,58 @@
     @media (min-width: 1024px) {
         font-size: 18px;
         line-height: 28px;
+    }
+}
+
+/* app/styles/utilities.css */
+@keyframes icon-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes number-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@utility icon-pulse {
+    animation: icon-pulse 2.4s ease-in-out infinite;
+}
+
+@utility number-float {
+    animation: number-float 3s ease-in-out infinite;
+}
+
+@keyframes accordion-collapse {
+    from {
+        height: var(--accordion-panel-height, auto);
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+@keyframes accordion-expand {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--accordion-panel-height, auto);
     }
 }
