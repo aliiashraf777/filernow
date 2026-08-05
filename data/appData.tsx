@@ -337,6 +337,62 @@ export const whyFilerNowSteps: IWhyFilerNowStep[] = [
 
 ]
 
+// data/appData.tsx — new export, title/description/icon still come from whyFilerNowSteps only
+export interface IWhyFilerNowStepExtra {
+    image: string
+    imageAlt: string
+    highlights: { label: string, detail: string }[]
+}
+
+// indexed to match whyFilerNowSteps' existing order
+export const whyFilerNowStepExtras: IWhyFilerNowStepExtra[] = [
+    {
+        // image: "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=900",
+        image: "/assets/whyFilernowStepsExtra1.jpg",
+        imageAlt: "Secure document handling",
+        highlights: [
+            { label: "Data Encryption", detail: "Bank-grade encryption on every document you upload." },
+            { label: "Confidential Handling", detail: "Your records are never shared without consent." },
+        ],
+    },
+    {
+        // image: "https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg?auto=compress&cs=tinysrgb&w=900",
+        image: "/assets/whyFilernowStepsExtra2.jpg",
+        imageAlt: "Consultant reviewing a client's case",
+        highlights: [
+            { label: "Qualified Team", detail: "Certified tax and corporate law consultants." },
+            { label: "1-on-1 Guidance", detail: "A dedicated consultant assigned to your case." },
+        ],
+    },
+    {
+        // image: "https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=900",
+        image: "/assets/whyFilernowStepsExtra3.jpg",
+        imageAlt: "Digital filing on a laptop",
+        highlights: [
+            { label: "Same-Day Filing", detail: "Most registrations completed within a single day." },
+            { label: "Digital Process", detail: "No physical visits or paperwork required." },
+        ],
+    },
+    {
+        // image: "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=900",
+        image: "/assets/whyFilernowStepsExtra4.jpg",
+        imageAlt: "Compliance documents and regulations",
+        highlights: [
+            { label: "FBR & SECP Aligned", detail: "Always up to date with the latest regulations." },
+            { label: "Ongoing Monitoring", detail: "We track deadlines so you never miss one." },
+        ],
+    },
+    {
+        // image: "https://images.pexels.com/photos/5717479/pexels-photo-5717479.jpeg?auto=compress&cs=tinysrgb&w=900",
+        image: "/assets/whyFilernowStepsExtra5.jpg",
+        imageAlt: "Satisfied client shaking hands",
+        highlights: [
+            { label: "10,000+ Clients", detail: "Trusted by individuals and businesses nationwide." },
+            { label: "99% Satisfaction", detail: "Consistently rated for reliability and support." },
+        ],
+    },
+]
+
 export const whoWeAreTrustPoints: string[] = [
     "Transparent pricing with no hidden charges",
     "Dedicated consultant for every client",
@@ -371,7 +427,7 @@ export const advantageStackData: IAdvantageItem[] = [
         description: "To make tax compliance and business registration effortless and accessible for everyone in Pakistan — individuals, freelancers, startups, SMEs and companies alike.",
         stats: [{ value: "10,000+", label: "Clients Served" }, { value: "99%", label: "Satisfaction Rate" }],
         bottomText: "Precision and focus in every single filing.",
-        image: "/assets/ourMission.png", // confirmed — this asset already exists in your project
+        image: "/assets/advantageStackImg1.png",
         imageAlt: "Precision and focus in every filing",
         imageProofBadge: "Trusted Nationwide",
         reverse: false,
@@ -383,7 +439,8 @@ export const advantageStackData: IAdvantageItem[] = [
         description: "To be Pakistan's most trusted digital platform for tax filing and corporate compliance — handling everything from NTN registration to SECP incorporation.",
         stats: [{ value: "15+", label: "Services Offered" }, { value: "24/7", label: "Support Availability" }],
         bottomText: "One platform, every compliance need covered.",
-        image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800", // TODO: no dedicated "vision" asset exists yet — swap for a real one
+        // image: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
+        image: "/assets/advantageStackImg2.jpg",
         imageAlt: "Digital compliance platform in Pakistan",
         imageProofBadge: "Nationwide Reach",
         reverse: true,
@@ -395,10 +452,11 @@ export const advantageStackData: IAdvantageItem[] = [
         description: "Transparent pricing, dedicated support, complete documentation management, and timely reminders — everything you need for a smooth, hassle-free tax experience.",
         stats: [
             { value: "1 Day", label: "Fast Filing Turnaround" },
-            { value: `${whoWeAreTrustPoints.length}`, label: "Core Trust Commitments" }, // derived from your actual trust-points array, not hardcoded
+            { value: `${whoWeAreTrustPoints.length}`, label: "Core Trust Commitments" },
         ],
         bottomText: "No hidden charges, no missed deadlines.",
-        image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800", // TODO
+        // image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
+        image: "/assets/advantageStackImg3.jpg",
         imageAlt: "Consultant reviewing client documents",
         imageProofBadge: "Dedicated Support",
         reverse: false,
@@ -413,7 +471,8 @@ export const advantageStackData: IAdvantageItem[] = [
             { value: "5+", label: "Client Segments Served" },
         ],
         bottomText: "Individuals, freelancers, startups, SMEs and companies.",
-        image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800", // TODO
+        // image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=800",
+        image: "/assets/advantageStackImg4.jpg",
         imageAlt: "Business compliance documentation",
         imageProofBadge: "Full Service Range",
         reverse: true,
@@ -480,6 +539,7 @@ export const processTimelineData: IProcessPanel[] = [
         heading: "Share your documents",
         description: "Upload your CNIC, income details, and bank statements through a simple guided form — takes about five minutes.",
         card: {
+            image: "/assets/howItWorksOverlay.png",
             imageAlt: "Client submitting documents through FilerNow",
             title: "Document Submission",
             body: "No paperwork runs, no office visits. Send everything securely from your phone or laptop, and we confirm receipt the same day.",
@@ -492,6 +552,7 @@ export const processTimelineData: IProcessPanel[] = [
         heading: "We review and prepare",
         description: "A dedicated consultant checks every detail, applies eligible deductions, and prepares your filing for accuracy before anything is submitted.",
         card: {
+            image: "/assets/whyFilernowStepsExtra2.jpg",
             imageAlt: "FilerNow consultant reviewing a tax filing",
             title: "Expert Review",
             body: "Every return is checked by a real consultant, not just software — so nothing gets missed and nothing gets overpaid.",
@@ -504,6 +565,7 @@ export const processTimelineData: IProcessPanel[] = [
         heading: "You approve and sign off",
         description: "We walk you through the prepared filing, answer any questions, and get your confirmation before it's submitted to FBR.",
         card: {
+            image: "/assets/whyFilernowStepsExtra3.jpg",
             imageAlt: "Client approving their tax filing",
             title: "Your Sign-Off",
             body: "You see exactly what's being filed before it's filed — full transparency, no surprises after the fact.",
@@ -516,6 +578,7 @@ export const processTimelineData: IProcessPanel[] = [
         heading: "We file and confirm",
         description: "Your return is submitted directly to FBR, and you receive official confirmation along with your filing record for future reference.",
         card: {
+            image: "/assets/whyFilernowStepsExtra4.jpg",
             imageAlt: "Confirmed tax filing with FilerNow",
             title: "Filed & Confirmed",
             body: "Once submitted, you get proof of filing and a copy of your record — kept safely for next year, audits, or visa applications.",

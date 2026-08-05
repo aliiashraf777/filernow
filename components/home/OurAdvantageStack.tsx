@@ -1,9 +1,6 @@
-// components/home/OurAdvantageStack.tsx
-import Image from "next/image"
 import SectionContainer from "@/components/common/section/SectionContainer"
 // import SectionTitle from "@/components/ui/SectionTitle"
-import { advantageStackData, type IAdvantageItem } from "@/data/appData"
-import { cn } from "@/utils/cn"
+import { advantageStackData } from "@/data/appData"
 import SectionTitle from "../ui-custom/SectionTitle"
 import { AdvantageCard } from "./AdvantageCard"
 

@@ -37,7 +37,6 @@
     --spacing-brand-20: 20px;
 
     /* shadows */
-    /* --shadow-primary-btn: 0 8px 24px -8px #111111/10; */
     --shadow-primary-btn: 0 8px 24px -8px rgba(17, 17, 17, 0.1);
     --shadow-tool-card: 0px 4px 4px 0px rgba(200, 16, 46, 0.16);
     --shadow-service-card: 0px 4px 16px 0px rgba(200, 16, 46, 0.25);
