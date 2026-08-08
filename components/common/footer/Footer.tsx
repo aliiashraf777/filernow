@@ -6,7 +6,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <footer className="relative flex flex-col relative bg-background">
+    <footer className="relative flex flex-col bg-background">
       <FooterMain />
 
       <FooterCopyright />

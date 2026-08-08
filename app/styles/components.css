@@ -1,6 +1,5 @@
-/* app/styles/components.css */
 @layer components {
-    .btn-generic::before {
+    .sheen-sweep-hover::before {
         content: '';
         position: absolute;
         top: 0;
@@ -10,9 +9,11 @@
         background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 70%);
         transition: left 0.8s ease;
         pointer-events: none;
+        z-index: 1;
+        /* was implicit/auto — now guaranteed above the image, below the gradient/text at z-[1]... */
     }
 
-    .btn-generic:hover::before {
+    .sheen-sweep-hover:hover::before {
         left: 100%;
     }
 }

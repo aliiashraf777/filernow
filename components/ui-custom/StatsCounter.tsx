@@ -1,4 +1,3 @@
-// components/ui/StatCounter.tsx
 "use client"
 import { useCountUp } from "@/hooks/useCountUp"
 
@@ -16,7 +15,7 @@ const StatCounter = ({ to, suffix = "", label }: Props) => {
             <h3 className="heading-h3 text-[26px] text-primary text-center">
                 {value.toLocaleString()}{suffix}
             </h3>
-            <p className="mt-2 para-base text-text-secondary text-center">{label}</p>
+            <p className="mt-2 para-base text-text-secondary text-center whitespace-nowrap">{label}</p>
         </div>
     )
 }

@@ -5,6 +5,12 @@ import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/footer/Footer";
 import BeforeFooter from "@/components/common/footer/BeforeFooter";
 import { cn } from "@/utils/cn";
+import FilerSplashLoader from "@/components/ui-custom/FilerSplashLoader";
+import { CalculatorContextProvider } from "@/context/CalculatorContext";
+import TaxCalculatorDrawer from "@/components/home/calculator/TaxCalculatorDrawer";
+import ScrollToTopButton from "@/components/ui-custom/ScrollToTopBtn";
+import { FilerStatusContextProvider } from "@/context/FilerStatusContext";
+import FilerStatusDrawer from "@/components/home/filerStatus/FilerStatusDrawer";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -48,12 +54,18 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col text-text-dark bg-page-bg default-transition">
-        <Header />
-
-        {children}
-
-        <BeforeFooter />
-        <Footer />
+        <FilerStatusContextProvider>
+          <CalculatorContextProvider>
+            <FilerSplashLoader />
+            <Header />
+            {children}
+            <TaxCalculatorDrawer />
+            <FilerStatusDrawer />
+            <ScrollToTopButton />
+            <BeforeFooter />
+            <Footer />
+          </CalculatorContextProvider>
+        </FilerStatusContextProvider>
       </body>
     </html>
   );

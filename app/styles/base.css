@@ -53,6 +53,11 @@
 
         /* theme.css :root new token, deliberately no .dark override, it's constant by design */
         --dark-surface-bg: #0A0F1F;
+
+        --z-header: 50;
+        --z-dialog: 100;
+        --z-splash: 999;
+        --z-scroll-top: 40;
     }
 
     html {

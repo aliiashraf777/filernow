@@ -2,7 +2,7 @@ import { cn } from "@/utils/cn"
 import Link from "next/link"
 import React from "react"
 
-type ButtonVariantTy = 'gradient' | 'primary' | 'primary-light' | 'white' | 'blur' | 'ghost'
+export type ButtonVariantTy = 'gradient' | 'primary' | 'primary-light' | 'white' | 'blur' | 'ghost'
 type ButtonSizeTy = 'normal' | 'full'
 
 function variantClasses(variant: ButtonVariantTy, size: ButtonSizeTy, className?: string) {
@@ -23,7 +23,7 @@ function variantClasses(variant: ButtonVariantTy, size: ButtonSizeTy, className?
 
         variant === "ghost" && "bg-transparent border-border-clr text-white/80",
 
-        "btn-generic",
+        "sheen-sweep-hover",
 
         className,
     )
@@ -36,15 +36,17 @@ type Props = {
     disabled?: boolean,
     variant?: ButtonVariantTy,
     size?: ButtonSizeTy,
+    isLoading?: boolean,
 }
 
 const Button = ({
-    children, onClick, className, disabled, variant = 'primary', size = 'normal' }: Props) => {
+    children, onClick, className, disabled, variant = 'primary', size = 'normal', isLoading }: Props) => {
     return (
         <button
             type="button"
             onClick={onClick}
-            disabled={disabled}
+            disabled={disabled || isLoading}
+            aria-busy={isLoading}
             className={cn(
                 variantClasses(variant, size, className),
                 disabled && "opacity-50 cursor-not-allowed pointer-events-none",
@@ -96,7 +98,7 @@ type LinkBtnTy = {
     icon?: React.ReactNode,
     variant?: ButtonVariantTy,
     size?: ButtonSizeTy,
-    className: string,
+    className?: string,
 }
 
 export const LinkBtn = ({ href, label, icon, variant = 'primary', size = 'normal', className }: LinkBtnTy) => {

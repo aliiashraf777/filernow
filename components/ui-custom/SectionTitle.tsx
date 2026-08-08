@@ -12,7 +12,7 @@ type Props = {
 
 const SectionTitle = ({ infoLabel, heading, para, sectionClass, variant = 'light' }: Props) => {
     return (
-        <div className={cn("flex flex-col gap-3.5 items-center justify-center mb-[60px] max-w-[650px] mx-auto", sectionClass)}>
+        <div className={cn("flex flex-col gap-3.5 items-center justify-center mb-[30px] md:mb-[60px] max-w-[650px] mx-auto", sectionClass)}>
             <InfoBadge
                 label={infoLabel}
                 className={variant === 'dark' ? "bg-white/10 text-white/70 border-white/10" : undefined}
@@ -22,7 +22,7 @@ const SectionTitle = ({ infoLabel, heading, para, sectionClass, variant = 'light
                 {heading}
             </h2>
 
-            <p className={cn("para-18 text-center", variant === 'dark' ? "text-white/50" : "text-text-secondary")}>
+            <p className={cn("para-18 text-center", variant === 'dark' ? "text-white/50" : "text-text-secondary-muted")}>
                 {para}
             </p>
         </div>

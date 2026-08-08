@@ -1,7 +1,8 @@
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa"
-import { ShieldCheck, Users, Clock, Scale, Heart } from "lucide-react"
+import { ShieldCheck, Users, Clock, Scale, Heart, SearchCheck, Calculator } from "lucide-react"
+import { FileText, Receipt, ArrowLeftRight, Copyright, IdCard, Briefcase, ShoppingCart } from "lucide-react"
 
-
+// Home menu data
 export interface IMenuDataItem {
     id: string,
     label: string,
@@ -41,6 +42,7 @@ export const menuData: IMenuDataItem[] = [
     },
 ];
 
+// footer data
 export interface IFooterSocialLinksItem {
     id: string,
     link: string,
@@ -82,25 +84,26 @@ export const footerSocialLinks: IFooterSocialLinksItem[] = [
 ];
 
 export interface IFooterLinkItem {
+    id: string,
     label: string,
     href: string,
 }
 
 export const footerServicesData: IFooterLinkItem[] = [
-    { label: "Income Tax Return Filing", href: "/services/income-tax-return-filing" },
-    { label: "Business Registration", href: "/services/business-registration" },
-    { label: "Company Registration", href: "/services/company-registration" },
-    { label: "NTN Registration", href: "/services/ntn-registration" },
-    { label: "Sales Tax Registration", href: "/services/sales-tax-registration" },
-    { label: "Trademark Registration", href: "/services/trademark-registration" },
+    { id: "footerLink1", label: "Income Tax Return Filing", href: "/services/income-tax-return-filing" },
+    { id: "footerLink2", label: "Business Registration", href: "/services/business-registration" },
+    { id: "footerLink3", label: "Company Registration", href: "/services/company-registration" },
+    { id: "footerLink4", label: "NTN Registration", href: "/services/ntn-registration" },
+    { id: "footerLink5", label: "Sales Tax Registration", href: "/services/sales-tax-registration" },
+    { id: "footerLink6", label: "Trademark Registration", href: "/services/trademark-registration" },
 ]
 
 export const footerQuickLinks: IFooterLinkItem[] = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Blog", href: "/blog" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Calculator", href: "/calculator" },
+    { id: "footerQuickLink1", label: "Home", href: "/" },
+    { id: "footerQuickLink2", label: "About Us", href: "/about" },
+    { id: "footerQuickLink3", label: "Blog", href: "/blog" },
+    { id: "footerQuickLink4", label: "FAQ", href: "/faq" },
+    { id: "footerQuickLink5", label: "Calculator", href: "/calculator" },
 ]
 
 export interface IHeroStateItems {
@@ -115,35 +118,36 @@ export const heroStatsData: IHeroStateItems[] = [
     { to: 15, suffix: "+", label: "Services" },
     { to: 99, suffix: "%", label: "Satisfaction" },
 ]
-
-// data/appData.tsx — add alongside your existing exports
-import { SearchCheck, Calculator } from "lucide-react"
-
 export interface IQuickToolItem {
+    id: string,
     icon: React.ReactNode,
     title: string,
     description: string,
-    href: string,
+    href?: string,
+    action?: 'openCalculator' | 'openFilerStatus',
     variant: 'primary' | 'neutral',
 }
 
 export const quickToolsData: IQuickToolItem[] = [
     {
+        id: "quickTool1",
         icon: <SearchCheck size={24} />,
         title: "Check Filer Status",
         description: "Instantly verify if you are on the FBR Active Taxpayer List.",
-        href: "#",
+        action: "openFilerStatus",
         variant: "primary",
     },
     {
+        id: "quickTool2",
         icon: <Calculator size={24} />,
         title: "Calculate Your Tax",
         description: "Estimate your income tax liability in a few simple steps.",
-        href: "#",
+        action: "openCalculator",
         variant: "neutral",
     },
 ]
 
+// services grid data
 export interface IServiceItem {
     id: string,
     label: string,
@@ -268,6 +272,7 @@ export const servicesGridData: IServiceItem[] = [
 
 ]
 
+// why filernow data
 export interface IWhyFilerNowStep {
     number: string
     title: string
@@ -584,5 +589,165 @@ export const processTimelineData: IProcessPanel[] = [
             body: "Once submitted, you get proof of filing and a copy of your record — kept safely for next year, audits, or visa applications.",
             tags: ["FBR Submission", "Filing Record", "Confirmation"],
         },
+    },
+]
+
+// custom testimonials
+export interface IHomeTestimonialItem {
+    id: string,
+    name: string,
+    role: string,
+    avatarSrc?: string,
+    rating: number,
+    review: string,
+}
+
+export const homeTestimonialsData: IHomeTestimonialItem[] = [
+    {
+        id: "testimonial1",
+        name: "Muhammad Adeel",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi1.jpg",
+        rating: 5,
+        review: "Excellent service from start to finish. The team at FilerNow is professional, friendly, and always available to answer questions. They resolved my FBR issues quickly and made the entire process simple and hassle-free. I highly recommend their services.",
+    },
+    {
+        id: "testimonial2",
+        name: "Muhammad mughal",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi2.png",
+        rating: 5,
+        review: "I was struggling in tax filing. FilerNow helped me in the process. The team is professional and competent.",
+    },
+    {
+        id: "testimonial3",
+        name: "Wajahat ali Siddiqui",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi3.png",
+        rating: 5,
+        review: "My experience has been quite good so far. They focus on customer satisfaction.",
+    },
+    {
+        id: "testimonial4",
+        name: "Faisal Durrani",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi4.png",
+        rating: 5,
+        review: "They handled my sales tax with great care. Smooth process and great support!",
+    },
+    {
+        id: "testimonial5",
+        name: "Shoaib Shair",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi5.png",
+        rating: 4,
+        review: "Highly recommended service for all tax and business needs in Pakistan!",
+    },
+    {
+        id: "testimonial6",
+        name: "Asad Rajpoot",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi6.png",
+        rating: 4,
+        review: "Extremely helpful and prompt communication. Truly impressed!",
+    },
+    {
+        id: "testimonial7",
+        name: "M. Saboor",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi7.png",
+        rating: 4,
+        review: "Reliable, quick, and professional service. Filing taxes is no longer a pain!",
+    },
+    {
+        id: "testimonial8",
+        name: "Qalb e Mominz",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi8.png",
+        rating: 4,
+        review: "The support I got from this team was outstanding.",
+    },
+    {
+        id: "testimonial9",
+        name: "Ismail Lilla",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi9.png",
+        rating: 4,
+        review: "Thank you for making tax filing this easy! Great experience.",
+    },
+    {
+        id: "testimonial10",
+        name: "Muhammad Shahid",
+        role: "Verified Client",
+        avatarSrc: "/assets/testi/testi10.png",
+        rating: 4,
+        review: "Definitely recommended. The team is knowledgeable and helpful.",
+    },
+    // {
+    //     id: "testimonial11",
+    //     name: "Engr. Shah Nawaz Saeed",
+    //     role: "Verified Client",
+    //     avatarSrc: "/assets/testi/testi11.png",
+    //     rating: 4,
+    //     review: "Smooth, fast, and professional work. I’ll be back next year.",
+    // },
+    // {
+    //     id: "testimonial12",
+    //     name: "Shoaib Shair",
+    //     role: "Verified Client",
+    //     avatarSrc: "/assets/testi/testi12.png",
+    //     rating: 4,
+    //     review: "Highly recommended service for all tax and business needs in Pakistan!",
+    // },
+    // {
+    //     id: "testimonial13",
+    //     name: "Shoaib Shair",
+    //     role: "Verified Client",
+    //     avatarSrc: "/assets/testi/testi13.png",
+    //     rating: 4,
+    //     review: "Highly recommended service for all tax and business needs in Pakistan!",
+    // },
+]
+
+// what we do about section
+export interface IWhatWeDoItemAbout {
+    id: string,
+    label: string,
+    icon: React.ReactNode,
+    side: 'left' | 'right',
+    row: number,
+    left: number,   // % of orbit container
+    top: number,    // % of orbit container
+    width: number,  // px, from Figma
+}
+
+export const whatWeDoAboutItems: IWhatWeDoItemAbout[] = [
+    { id: "wwd1", label: "NTN Registration", icon: <IdCard size={18} />, side: "right", row: 0, left: 67.9, top: 15.1, width: 256 },
+    { id: "wwd2", label: "Tax Return Filing", icon: <FileText size={18} />, side: "left", row: 0, left: 8.9, top: 15.0, width: 240 },
+    { id: "wwd3", label: "Business Registration", icon: <Briefcase size={18} />, side: "right", row: 1, left: 72.2, top: 34.8, width: 256 },
+    { id: "wwd4", label: "GST Filling", icon: <Receipt size={18} />, side: "left", row: 1, left: 4.0, top: 34.7, width: 240 },
+    { id: "wwd5", label: "Trademark Registration", icon: <ShieldCheck size={18} />, side: "right", row: 2, left: 72.2, top: 54.5, width: 288 },
+    { id: "wwd6", label: "Import/Export License", icon: <ArrowLeftRight size={18} />, side: "left", row: 2, left: 0.9, top: 54.5, width: 256 },
+    { id: "wwd7", label: "Sale Tax Registration", icon: <ShoppingCart size={18} />, side: "right", row: 3, left: 68.3, top: 74.2, width: 256 },
+    { id: "wwd8", label: "Copyright Services", icon: <Copyright size={18} />, side: "left", row: 3, left: 8.7, top: 74.1, width: 240 },
+]
+
+export interface IWhyChoosePoint {
+    title: string,
+    description: string,
+}
+
+export const whyChooseFilernowPoints: IWhyChoosePoint[] = [
+    {
+        title: "100% Secure & Confidential",
+        description: "All data is encrypted and handled by certified professionals.",
+    },
+    {
+        title: "Fast Turnaround",
+        description: "Most services are delivered within 24–48 hours.",
+    },
+    {
+        title: "Trusted Professionals",
+        description: "Work with experienced consultants registered with FBR and SECP.",
     },
 ]

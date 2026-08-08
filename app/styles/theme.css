@@ -48,6 +48,11 @@
     --gradient-primary-rl: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-light) 100%);
     --gradient-how-it-works: linear-gradient(90deg, var(--gradient-how-it-works-start) 0%, var(--brand-primary) 100%);
 
+    --z-index-header: var(--z-header);
+    --z-index-dialog: var(--z-dialog);
+    --z-index-splash: var(--z-splash);
+    --z-index-scroll-top: var(--z-scroll-top);
+
     /* accordion */
     --animate-accordion-collapse: accordion-collapse 200ms ease-out;
     --animate-accordion-expand: accordion-expand 200ms ease-out;

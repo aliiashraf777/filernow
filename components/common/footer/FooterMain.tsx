@@ -7,6 +7,7 @@ import { FiMessageCircle } from "react-icons/fi"
 import { IoCallOutline, IoMailUnreadOutline } from "react-icons/io5"
 import NewsletterForm from "./NewsletterForm"
 import Image from "next/image"
+import RevealOnScroll from "@/components/ui-custom/RevealOnScroll"
 
 type Props = {}
 
@@ -29,61 +30,68 @@ const FooterMain = (props: Props) => {
             /> */}
 
             <div
-                className="relative z-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[350px_minmax(150px,_1fr)_minmax(150px,_1fr)_1fr] gap-6 md:gap-12"
+                className="relative z-50x grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[350px_minmax(150px,_1fr)_minmax(150px,_1fr)_1fr] gap-6 md:gap-12"
             >
+                <RevealOnScroll delay={0}>
+                    <FooterDescription />
+                </RevealOnScroll>
 
-                <FooterDescription />
+                <RevealOnScroll delay={100}>
+                    <FooterColumn
+                        title="services"
+                        links={footerServicesData}
+                    />
+                </RevealOnScroll>
 
-                <FooterColumn
-                    title="services"
-                    links={footerServicesData}
-                />
+                <RevealOnScroll delay={200}>
+                    <FooterColumn
+                        title="Quick Links"
+                        links={footerQuickLinks}
+                    />
+                </RevealOnScroll>
 
-                <FooterColumn
-                    title="Quick Links"
-                    links={footerQuickLinks}
-                />
+                <RevealOnScroll delay={300}>
+                    <div className="flex flex-col gap-4">
+                        <h6 className="heading-h6 font-bold capitalize">
+                            Need any help?
+                        </h6>
+                        <div className="flex flex-col gap-3 text-text-secondary">
+                            <TopBarContactItem
+                                icon={<FiMessageCircle
+                                    size={18}
+                                    className="text-primary"
+                                />}
+                                label="Click here – WhatsApp"
+                                href="https://wa.me/923041110555" openOnNewTab
+                                paraClass="para-small hover:text-primary"
+                            />
+                            <TopBarContactItem
+                                icon={<IoMailUnreadOutline
+                                    size={18}
+                                    className="text-primary"
+                                />}
+                                label="support@filernow.com"
+                                href="mailto:support@filernow.com"
+                                paraClass="para-small hover:text-primary"
+                            />
+                            <TopBarContactItem
+                                icon={<IoCallOutline
+                                    size={18}
+                                    className="text-primary"
+                                />}
+                                label="0304 1110555"
+                                href="tel:+923041110555"
+                                paraClass="para-small hover:text-primary"
+                            />
+                        </div>
 
-                <div className="flex flex-col gap-4">
-                    <h6 className="heading-h6 font-bold capitalize">
-                        Need any help?
-                    </h6>
-                    <div className="flex flex-col gap-3 text-text-secondary">
-                        <TopBarContactItem
-                            icon={<FiMessageCircle
-                                size={18}
-                                className="text-primary"
-                            />}
-                            label="Click here – WhatsApp"
-                            href="https://wa.me/923041110555" openOnNewTab
-                            paraClass="para-small hover:text-primary"
-                        />
-                        <TopBarContactItem
-                            icon={<IoMailUnreadOutline
-                                size={18}
-                                className="text-primary"
-                            />}
-                            label="support@filernow.com"
-                            href="mailto:support@filernow.com"
-                            paraClass="para-small hover:text-primary"
-                        />
-                        <TopBarContactItem
-                            icon={<IoCallOutline
-                                size={18}
-                                className="text-primary"
-                            />}
-                            label="0304 1110555"
-                            href="tel:+923041110555"
-                            paraClass="para-small hover:text-primary"
-                        />
+                        <h6 className="heading-h6 mt-2">
+                            Subscribe to our newsletter
+                        </h6>
+
+                        <NewsletterForm />
                     </div>
-
-                    <h6 className="heading-h6 mt-2">
-                        Subscribe to our newsletter
-                    </h6>
-
-                    <NewsletterForm />
-                </div>
+                </RevealOnScroll>
             </div>
         </SectionContainer>
     )

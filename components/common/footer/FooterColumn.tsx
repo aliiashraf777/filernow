@@ -14,7 +14,7 @@ const FooterColumn = ({ title, links }: FooterColumnProps) => (
 
         <ul className="flex flex-col gap-2 md:gap-4">
             {links.map((link) => (
-                <li key={link.label}
+                <li key={link.id}
                     className="hover:translate-x-0.5 default-transition"
                 >
                     <Link

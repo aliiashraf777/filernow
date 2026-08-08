@@ -1,4 +1,3 @@
-// components/common/section/SectionContainer.tsx
 import { cn } from "@/utils/cn"
 
 type Props = {
