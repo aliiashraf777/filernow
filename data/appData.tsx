@@ -1,6 +1,7 @@
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa"
 import { ShieldCheck, Users, Clock, Scale, Heart, SearchCheck, Calculator } from "lucide-react"
-import { FileText, Receipt, ArrowLeftRight, Copyright, IdCard, Briefcase, ShoppingCart } from "lucide-react"
+import { FileText, Receipt, ArrowLeftRight, Copyright, IdCard, Briefcase, ShoppingCart, Calendar } from "lucide-react"
+import { IWaveStepItem } from "@/lib/types/wave-steps/types";
 
 // Home menu data
 export interface IMenuDataItem {
@@ -272,7 +273,7 @@ export const servicesGridData: IServiceItem[] = [
 
 ]
 
-// why filernow data
+// home why filernow data
 export interface IWhyFilerNowStep {
     number: string
     title: string
@@ -285,7 +286,8 @@ export interface IWhyFilerNowStep {
     textOffsetY?: number,
 }
 
-export const whyFilerNowSteps: IWhyFilerNowStep[] = [
+// export const whyFilerNowSteps: IWhyFilerNowStep[] = [
+export const whyFilerNowSteps: IWaveStepItem[] = [
     {
         number: "1",
         title: "Secure Process",
@@ -332,6 +334,63 @@ export const whyFilerNowSteps: IWhyFilerNowStep[] = [
         number: "5",
         title: "Customer Satisfaction",
         description: "10,000+ satisfied clients trust FilerNow for their compliance needs.",
+        icon: <Heart size={28} className="text-primary" />,
+        left: 91.0,
+        top: 30,
+        labelPosition: 'top',
+        textOffsetX: 150,
+        textOffsetY: 20,
+    },
+
+]
+
+export const aboutWhyChooseSteps: IWaveStepItem[] = [
+    {
+        number: "1",
+        title: "Projects on Time",
+        description: "On-time Project Delivery: Our Pledge",
+        icon: <Calendar size={28} className="text-primary" />,
+        left: 50.6,
+        top: 50.0,
+        labelPosition: 'top'
+    },
+
+    {
+        number: "2",
+        title: "The Best Team Work",
+        description: "Achieving Excellence Together.",
+        icon: <Users size={28} className="text-primary" />,
+        left: 17.3,
+        top: 65.2,
+        labelPosition: 'bottom'
+    },
+
+    {
+        number: "3",
+        title: "Best Management",
+        description: "We provide best management to you and fullfil your services.",
+        icon: <Briefcase size={28} className="text-primary" />,
+        left: 40.0,
+        top: 20,
+        labelPosition: 'top'
+    },
+
+    {
+        number: "4",
+        title: "Trusted By Many Clients",
+        description: "Our Proven Client Relationships.",
+        icon: <Users size={28} className="text-primary" />,
+        left: 65.2,
+        top: 25,
+        labelPosition: 'bottom',
+        textOffsetX: 70,
+        textOffsetY: 40,
+    },
+
+    {
+        number: "5",
+        title: "Reliability",
+        description: "Reliable Partner for Your Digital Needs so try us Now to enjoy our services and be the best",
         icon: <Heart size={28} className="text-primary" />,
         left: 91.0,
         top: 30,

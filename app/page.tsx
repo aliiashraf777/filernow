@@ -7,10 +7,10 @@ import OurAdvantageStack from "@/components/home/stackingCards/OurAdvantageStack
 import OurProcessTimeline from "@/components/home/process/OurProcessTimeline";
 import OurServices from "@/components/home/ourServices/OurServices";
 import QuickTools from "@/components/home/quickTools/QuickTools";
-import HomeTestomonialsUp from "@/components/home/testimonials/HomeTestimonialsUp";
 import WhoWeAre from "@/components/home/whoWeAre/WhoWeAre";
 import WhyFilerNow from "@/components/home/whyFilernow/WhyFilernow";
 import WhyFilerNowSteps from "@/components/home/whyFilernow/WhyFilernowSteps";
+import HomeTestimonials from "@/components/home/testimonials/HomeTestimonials";
 
 export default function Home() {
   return (
@@ -36,7 +36,7 @@ export default function Home() {
 
       <Faqs />
 
-      <HomeTestomonialsUp />
+      <HomeTestimonials />
 
       <HomeBlogs />
     </main>

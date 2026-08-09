@@ -1,9 +1,8 @@
-// components/home/WhyFilerNowWave.tsx
 "use client"
 import { useEffect, useRef } from "react"
 import { useInView } from "@/hooks/useInView"
 
-const WhyFilerNowWave = () => {
+const WaveStepsWave = () => {
     const pathRef = useRef<SVGPathElement>(null)
     const { ref, inView } = useInView<HTMLDivElement>(0.2)
 
@@ -21,7 +20,7 @@ const WhyFilerNowWave = () => {
             className="absolute borderx"
             style={{ left: "-1.53%", right: "-1.58%", top: "-1.89%", bottom: "-31.88%" }}
         >
-            {/* exact path from your shape.svg — don't touch the d or viewBox, the wrapper insets above are what align it */}
+            {/* don't touch the d or viewBox, the wrapper insets above are what align it */}
             <svg viewBox="0 0 1210 213" preserveAspectRatio="none" fill="none" className="w-full h-full overflow-visible">
                 <path
                     ref={pathRef}
@@ -37,4 +36,4 @@ const WhyFilerNowWave = () => {
     )
 }
 
-export default WhyFilerNowWave
+export default WaveStepsWave

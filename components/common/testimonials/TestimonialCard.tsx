@@ -11,7 +11,7 @@ type Props = {
 const getInitials = (name: string) =>
     name.split(" ").map((part) => part[0]).slice(0, 2).join("").toUpperCase()
 
-const HomeTestimonialsCard = ({ testimonial, isActive }: Props) => {
+const TestimonialCard = ({ testimonial, isActive }: Props) => {
     const { name, role, avatarSrc, rating, review } = testimonial
 
     return (
@@ -70,4 +70,4 @@ const HomeTestimonialsCard = ({ testimonial, isActive }: Props) => {
     )
 }
 
-export default HomeTestimonialsCard
+export default TestimonialCard
