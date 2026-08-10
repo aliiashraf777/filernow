@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react"
 import SectionContainer from "@/components/common/section/SectionContainer"
 import SectionTitle from "@/components/ui-custom/SectionTitle"
 import RevealOnScroll from "@/components/ui-custom/RevealOnScroll"
-import { AnchorBtn } from "@/components/btns/Button"
-import FeaturedBlogCard from "./FeaturedBlogCard"
-import BlogListItem from "./BlogListItem"
+import { AnchorBtn } from "@/components/common/btns/Button"
+import FeaturedBlogCard from "../../blog/FeaturedBlogCard"
+import BlogListItem from "../../blog/BlogListItem"
 import { homeFeaturedBlogPosts } from "@/data/blogData"
 
 const HomeBlogs = () => {

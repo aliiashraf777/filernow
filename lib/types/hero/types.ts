@@ -1,4 +1,4 @@
-import type { ButtonVariantTy } from "@/components/btns/Button"
+import type { ButtonVariantTy } from "@/components/common/btns/Button"
 
 export type HeroCtaItem = {
     label: string,

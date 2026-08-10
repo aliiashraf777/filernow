@@ -1,6 +1,6 @@
 "use client"
 import SectionContainer from "@/components/common/section/SectionContainer"
-import Button from "@/components/btns/Button"
+import Button from "@/components/common/btns/Button"
 import { whyFilerNowSteps, whyFilerNowStepExtras } from "@/data/appData"
 import { useScrollProgress } from "@/hooks/useScrollProgress"
 import { useScrollSpy } from "@/hooks/useScrollSpy"

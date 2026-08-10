@@ -2,6 +2,7 @@ import AboutHero from "@/components/about/AboutHero"
 import AboutHighlights from "@/components/about/AboutHighlights"
 import WhatWeDo from "@/components/about/WhatWeDo"
 import WhyChooseFilernow from "@/components/about/WhyChooseFilernow"
+import BeforeFooter from "@/components/common/footer/BeforeFooter"
 
 type Props = {}
 
@@ -12,6 +13,7 @@ const About = (props: Props) => {
       <WhatWeDo />
       <AboutHighlights />
       <WhyChooseFilernow />
+      <BeforeFooter />
     </main>
   )
 }

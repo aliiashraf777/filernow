@@ -7,8 +7,10 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import type { IFaqItem } from "@/data/appData"
+// import type { IFaqItem } from "@/data/appData"
 import RevealOnScroll from "../../ui-custom/RevealOnScroll"
+import FaqAnswer from "./FaqAnswer"
+import { IFaqItem } from "@/lib/types/faq/types"
 
 type Props = {
     items: IFaqItem[],
@@ -50,10 +52,13 @@ const FaqAccordion = ({ items, defaultValue }: Props) => {
                             </span>
                         </AccordionTrigger>
 
-                        <AccordionContent className="pb-5">
+                        {/* <AccordionContent className="pb-5">
                             <p className="para-small text-text-secondary leading-[22.75px]">
                                 {item.answer}
                             </p>
+                        </AccordionContent> */}
+                        <AccordionContent className="pb-5">
+                            <FaqAnswer answer={item.answer} />
                         </AccordionContent>
                     </AccordionItem>
                 </RevealOnScroll>

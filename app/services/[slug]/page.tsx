@@ -1,49 +1,61 @@
-// app/services/[slug]/page.tsx — hero section (heading/description/checklist would come from
-// your service data source per slug; hardcoded here to match the Figma you sent)
-import Image from "next/image"
+// app/services/[slug]/page.tsx
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import ServicesHero from "@/components/services/ServicesHero"
+import ServiceNeedProvidedSection from "@/components/services/ServiceNeedProvidedSection"
 import SectionContainer from "@/components/common/section/SectionContainer"
-// import HeroTextbox from "@/components/common/hero/HeroTextbox"
-import { ArrowRight, Check, Zap } from "lucide-react"
-import { FaWhatsapp } from "react-icons/fa"
-import HeroTextbox from "@/components/home/hero/HeroTextbox"
+import SectionTitle from "@/components/ui-custom/SectionTitle"
+import RevealOnScroll from "@/components/ui-custom/RevealOnScroll"
+import { getServiceBySlug, allServiceSlugs } from "@/data/servicesData"
+import FaqAccordion from "@/components/home/faqs/FaqAccordion"
+import Faqs from "@/components/home/faqs/Faqs"
+import BeforeFooter from "@/components/common/footer/BeforeFooter"
 
-type Props = {}
+type Props = {
+    params: Promise<{ slug: string }>,
+}
 
-const page = (props: Props) => {
+export function generateStaticParams() {
+    return allServiceSlugs.map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params
+    const service = getServiceBySlug(slug)
+    if (!service) return {}
+    return { title: service.seoTitle, description: service.seoDescription }
+}
+
+const ServiceDetailPage = async ({ params }: Props) => {
+    const { slug } = await params
+    const service = getServiceBySlug(slug)
+    if (!service) notFound()
+
     return (
-        <SectionContainer
-            bgImage={
-                <>
-                    <Image src="/assets/services/servicesHeroBg.png" alt="" fill priority style={{ objectFit: "cover" }} className="-z-10" />
-                    <div
-                        className="absolute inset-0 -z-10"
-                    // className="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/95 to-background/10"
-                    // style={{background: "linear-gradient(90deg, #FFFFFF 43.77%, rgba(255, 238, 238, 0) 100%)"}}
-                    />
-                </>
-            }
-            containerClass="relative py-16"
-            sectionClass="-my-6"
-        >
-            <HeroTextbox
-                infoBadgeLabel="Fast Processing"
-                heading={<>Business NTN<br /><span className="text-primary">Registration</span></>}
-                description="Register your business name with the Federal Board of Revenue (FBR) in Pakistan. FilerNow handles the entire process online, securing your official Business NTN and Taxpayer Certificate within 12 working hours."
-                ctas={[
-                    { label: "Become A Filer", icon: <ArrowRight size={18} />, variant: "primary" },
-                    { label: "Talk to an Expert", icon: <FaWhatsapp size={18} className="text-secondary" />, variant: "white" },
-                ]}
-                bottomRow={{
-                    type: "checklist",
-                    items: [
-                        { icon: <Check size={16} />, label: "100% Online Process" },
-                        { icon: <Zap size={16} />, label: "Within 12 Working Hours" },
-                    ],
-                }}
-                className="max-w-xl py-[45px]"
+        <main>
+            <ServicesHero
+                breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.breadcrumbLabel }]}
+                infoBadgeLabel={service.heroInfoBadgeLabel}
+                heading={service.heroHeading}
+                description={service.heroDescription}
+                ctas={service.heroCtas}
+                checklist={service.heroChecklist}
             />
-        </SectionContainer>
+
+            <ServiceNeedProvidedSection
+                heading={service.needProvidedHeading}
+                para={service.needProvidedPara}
+                boxes={service.needProvidedBoxes}
+            />
+
+            <Faqs
+                faqData={service.faqs}
+                sectionHeading="Common questions about this service"
+            />
+
+            <BeforeFooter />
+        </main>
     )
 }
 
-export default page
+export default ServiceDetailPage

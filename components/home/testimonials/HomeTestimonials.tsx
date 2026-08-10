@@ -1,5 +1,5 @@
 import TestimonialsCarousel from "@/components/common/testimonials/TestimonialsCarousel"
-import { homeTestimonialsData } from "@/data/appData"
+import { homeTestimonialsData } from "@/data/testimonialsData"
 
 const HomeTestimonials = () => {
     return (

@@ -1,10 +1,14 @@
-import Button, { LinkBtn } from "@/components/btns/Button"
+import Button, { LinkBtn } from "@/components/common/btns/Button"
+import Breadcrumb, { BreadcrumbItem } from "@/components/ui-custom/Breadcrumb"
 import InfoBadge from "@/components/ui-custom/InfoBadge"
 import StatCounter from "@/components/ui-custom/StatsCounter"
 import { HeroBottomRow, HeroCtaItem } from "@/lib/types/hero/types"
 import { cn } from "@/utils/cn"
+import { ArrowRight } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 type Props = {
+    breadcrumbItems?: BreadcrumbItem[],
     infoBadgeLabel: string,
     heading: React.ReactNode,
     description: string,
@@ -18,13 +22,31 @@ const HeroTextbox = ({
     infoBadgeLabel,
     heading,
     description,
-    ctas = [],
+    ctas = [
+        {
+            label: "Become A Filer",
+            icon: <ArrowRight size={18} />,
+            variant: "primary",
+            href: "/become-a-filer",
+        },
+
+        {
+            label: "Talk to an Expert",
+            icon: <FaWhatsapp size={18} className="text-secondary" />,
+            variant: "white",
+            href: "https://wa.me/923041110555",
+        },
+
+    ],
     bottomRow,
     className,
     headingClassName,
+    breadcrumbItems,
 }: Props) => {
     return (
         <div className={cn("pt-[50px]x md:pt-0x container-y-padding flex flex-col gap-4 md:gap-7", className)}>
+            {breadcrumbItems && <Breadcrumb items={breadcrumbItems} />}
+
             <InfoBadge
                 label={infoBadgeLabel}
                 className="animate-fade-slide-up [animation-delay:450ms]"

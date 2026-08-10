@@ -1,8 +1,8 @@
-import { servicesGridData } from "@/data/appData"
 import SectionContainer from "../../common/section/SectionContainer"
 import SectionTitle from "../../ui-custom/SectionTitle"
 import ServiceCard from "./ServiceCard"
 import RevealOnScroll from "../../ui-custom/RevealOnScroll"
+import { servicesGridData } from "@/data/servicesGridData"
 
 type Props = {}
 
@@ -11,7 +11,7 @@ const OurServices = (props: Props) => {
         <SectionContainer
             containerClass="container-y-padding"
         >
-            <RevealOnScroll delay={0}>
+            <RevealOnScroll delay={120}>
                 <SectionTitle
                     infoLabel="Our services"
                     heading="Everything you need, in one place"

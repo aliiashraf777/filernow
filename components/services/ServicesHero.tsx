@@ -1,9 +1,8 @@
 import Image from "next/image"
 import SectionContainer from "@/components/common/section/SectionContainer"
 import HeroTextbox from "@/components/home/hero/HeroTextbox"
-import { ArrowRight, Check, Zap } from "lucide-react"
-import { FaWhatsapp } from "react-icons/fa"
 import type { HeroChecklistItem, HeroCtaItem } from "@/lib/types/hero/types"
+import { type BreadcrumbItem } from "@/components/ui-custom/Breadcrumb"
 
 type Props = {
     infoBadgeLabel: string,
@@ -12,18 +11,17 @@ type Props = {
     ctas?: HeroCtaItem[],
     checklist?: HeroChecklistItem[],
     bgImageSrc?: string,
+    breadcrumbItems?: BreadcrumbItem[],
 }
 
 const ServicesHero = ({
+    breadcrumbItems,
     infoBadgeLabel,
     heading,
     description,
-    ctas = [
-        { label: "Become A Filer", icon: <ArrowRight size={18} />, variant: "primary" },
-        { label: "Talk to an Expert", icon: <FaWhatsapp size={18} className="text-secondary" />, variant: "white" },
-    ],
+    ctas,
     checklist = [],
-    bgImageSrc = "/assets/servicesHeroBg.jpg",
+    bgImageSrc = "/assets/services/servicesHeroBgUp.png",
 }: Props) => {
     return (
         <SectionContainer
@@ -38,19 +36,23 @@ const ServicesHero = ({
                         style={{ objectFit: "cover" }}
                         className="-z-10"
                     />
-                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/95 to-background/10" />
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/55 to-background/10" />
                 </>
             }
-            containerClass="relative py-16"
+            containerClass="relative py-16x"
         >
-            <HeroTextbox
-                infoBadgeLabel={infoBadgeLabel}
-                heading={heading}
-                description={description}
-                ctas={ctas}
-                bottomRow={checklist.length > 0 ? { type: "checklist", items: checklist } : undefined}
-                className="max-w-xl"
-            />
+            <div className="max-w-xl">
+                {/* {breadcrumbItems && <Breadcrumb items={breadcrumbItems} />} */}
+                <HeroTextbox
+                    breadcrumbItems={breadcrumbItems}
+                    infoBadgeLabel={infoBadgeLabel}
+                    heading={heading}
+                    description={description}
+                    ctas={ctas}
+                    bottomRow={checklist.length > 0 ? { type: "checklist", items: checklist } : undefined}
+                // className="max-w-xl"
+                />
+            </div>
         </SectionContainer>
     )
 }

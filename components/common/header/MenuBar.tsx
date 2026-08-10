@@ -1,6 +1,6 @@
 "use client"
 
-import Button from "@/components/btns/Button"
+import Button, { LinkBtn } from "@/components/common/btns/Button"
 import SectionContainer from "../section/SectionContainer"
 import Image from "next/image"
 import { FileBadge, Menu } from "lucide-react"
@@ -45,14 +45,12 @@ const MenuBar = (props: Props) => {
                 <div className="flex items-center gap-5">
                     <ThemeToggle />
 
-                    <Button
+                    <LinkBtn
+                        href="/become-a-filer"
+                        label="Become a filer"
+                        icon={<FileBadge size={16} />}
                         className="hidden md:flex"
-                    >
-                        Become a filer
-                        <FileBadge
-                            size={16}
-                        />
-                    </Button>
+                    />
 
                     <Button
                         variant="primary-light"

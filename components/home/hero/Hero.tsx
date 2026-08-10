@@ -1,6 +1,6 @@
 import Image from "next/image"
 import SectionContainer from "@/components/common/section/SectionContainer"
-import Button from "@/components/btns/Button"
+import Button from "@/components/common/btns/Button"
 import { ArrowRight } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa"
 import InfoBadge from "../../ui-custom/InfoBadge"

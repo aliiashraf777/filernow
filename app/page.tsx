@@ -11,6 +11,8 @@ import WhoWeAre from "@/components/home/whoWeAre/WhoWeAre";
 import WhyFilerNow from "@/components/home/whyFilernow/WhyFilernow";
 import WhyFilerNowSteps from "@/components/home/whyFilernow/WhyFilernowSteps";
 import HomeTestimonials from "@/components/home/testimonials/HomeTestimonials";
+import { faqData } from "@/data/homeFaqsData";
+import BeforeFooter from "@/components/common/footer/BeforeFooter";
 
 export default function Home() {
   return (
@@ -34,11 +36,13 @@ export default function Home() {
 
       {/* <OurAdvantageStack /> */}
 
-      <Faqs />
+      <Faqs faqData={faqData} />
 
       <HomeTestimonials />
 
       <HomeBlogs />
+
+      <BeforeFooter />
     </main>
   );
 }

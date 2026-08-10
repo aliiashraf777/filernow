@@ -1,6 +1,6 @@
 "use client"
 
-import { AnchorBtn } from '@/components/btns/Button';
+import { AnchorBtn } from '@/components/common/btns/Button';
 import { footerSocialLinks } from '@/data/appData';
 import Image from 'next/image';
 import Link from 'next/link';

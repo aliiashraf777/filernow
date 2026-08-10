@@ -8,7 +8,7 @@
 // `publishedAt` ISO strings instead.
 const daysAgo = (n: number) => new Date(Date.now() - n * 24 * 60 * 60 * 1000).toISOString()
 
-import type { IBlogPost } from "@/types/blog"
+import type { IBlogPost } from "@/lib/types/blogs/blog"
 
 export const homeFeaturedBlogPosts: IBlogPost[] = [
     {

@@ -62,7 +62,7 @@ export default function RootLayout({
             <TaxCalculatorDrawer />
             <FilerStatusDrawer />
             <ScrollToTopButton />
-            <BeforeFooter />
+            {/* <BeforeFooter /> */}
             <Footer />
           </CalculatorContextProvider>
         </FilerStatusContextProvider>

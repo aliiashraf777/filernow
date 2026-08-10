@@ -1,4 +1,3 @@
-// components/ui/ServiceCard.tsx
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/utils/cn"
@@ -15,10 +14,10 @@ const ServiceCard = ({ label, icon, href, highlighted }: Props) => {
         <Link
             href={href}
             className={cn(
-                "flex flex-col items-center text-center gap-3 rounded-brand-8 border py-4 px-5 default-transition hover:-translate-y-0.5 hover:shadow-service-card group",
+                "flex flex-col items-center text-center gap-3 rounded-brand-8 border py-4 px-5 default-transition hover:-translate-y-1 hover:shadow-service-card group",
                 highlighted
-                    ? "border-primary/70 shadow-service-card"
-                    : "border-border-clr hover:border-primary/70",
+                    ? "border-primary/20 shadow-service-card"
+                    : "border-border-clr hover:border-primary/20",
             )}
         >
             <span

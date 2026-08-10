@@ -5,10 +5,10 @@ import SectionContainer from "@/components/common/section/SectionContainer"
 import SectionTitle from "@/components/ui-custom/SectionTitle"
 import RevealOnScroll from "@/components/ui-custom/RevealOnScroll"
 import { cn } from "@/utils/cn"
-import type { IHomeTestimonialItem } from "@/data/appData"
 import { useTestimonialCarousel } from "@/hooks/useTestimonialsCarousel"
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
 import TestimonialCard from "./TestimonialCard"
+import { IHomeTestimonialItem } from "@/data/testimonialsData"
 
 type Props = {
     testimonials: IHomeTestimonialItem[],

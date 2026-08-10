@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react"
-import Button from "@/components/btns/Button"
+import Button from "@/components/common/btns/Button"
 import SectionContainer from "@/components/common/section/SectionContainer"
 import VideoCard from "../../ui-custom/VideoCard"
 import RevealOnScroll from "../../ui-custom/RevealOnScroll"

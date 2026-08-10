@@ -1,21 +1,25 @@
 import SectionContainer from "@/components/common/section/SectionContainer"
 import SectionTitle from "@/components/ui-custom/SectionTitle"
 import FaqAccordion from "@/components/home/faqs/FaqAccordion"
-import { faqData } from "@/data/appData"
 import RevealOnScroll from "../../ui-custom/RevealOnScroll"
+import { IFaqItem } from "@/lib/types/faq/types"
 
-type Props = {}
+type Props = {
+    faqData: IFaqItem[],
+    sectionHeading?: string,
+    sectionPara?: string,
+}
 
-const Faqs = (props: Props) => {
+const Faqs = ({ faqData, sectionHeading = "Frequently Asked Questions", sectionPara = "Everything you need to know about filing taxes and registering your business with FilerNow." }: Props) => {
     return (
         <SectionContainer
             paddingClass="container-y-padding pt-0"
         >
             <RevealOnScroll delay={100}>
                 <SectionTitle
-                    infoLabel="FAQ"
-                    heading="Frequently Asked Questions"
-                    para="Everything you need to know about filing taxes and registering your business with FilerNow."
+                    infoLabel="FAQs"
+                    heading={sectionHeading}
+                    para={sectionPara}
                 />
             </RevealOnScroll>
 

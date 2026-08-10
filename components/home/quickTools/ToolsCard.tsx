@@ -13,7 +13,7 @@ type Props = {
 
 const ToolsCard = ({ icon, title, description, href, onClick, variant = 'neutral' }: Props) => {
     const className = cn(
-        "relative sheen-sweep-hover group flex items-center gap-4 rounded-brand-16 p-6 border default-transition text-left w-full",
+        "relative sheen-sweep-hover overflow-hidden group flex items-center gap-4 rounded-brand-16 p-6 border default-transition text-left w-full",
         variant === "primary" && "bg-primary/5 border-primary/20 hover:bg-primary/10 shadow-tool-card",
         variant === "neutral" && "bg-border-clr/30 border-border-clr/40 hover:bg-primary/5 hover:border-primary/20 hover:shadow-tool-card",
     )

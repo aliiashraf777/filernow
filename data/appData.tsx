@@ -8,40 +8,17 @@ export interface IMenuDataItem {
     id: string,
     label: string,
     link: string,
+    hasMegaMenu?: boolean,
 }
 
 export const menuData: IMenuDataItem[] = [
-    {
-        id: 'menuData1',
-        label: 'Home',
-        link: '/',
-    },
-    {
-        id: 'menuData2',
-        label: 'Services',
-        link: '/services',
-    },
-    {
-        id: 'menuData3',
-        label: 'Tax Rates',
-        link: '/tax-rates',
-    },
-    {
-        id: 'menuData4',
-        label: 'About Us',
-        link: '/about',
-    },
-    {
-        id: 'menuData5',
-        label: 'Blog',
-        link: '/blog',
-    },
-    {
-        id: 'menuData6',
-        label: 'Calculator',
-        link: '',
-    },
-];
+    { id: 'menuData1', label: 'Home', link: '/' },
+    { id: 'menuData2', label: 'Services', link: '/services', hasMegaMenu: true },
+    { id: 'menuData3', label: 'Tax Rates', link: '/tax-rates' },
+    { id: 'menuData4', label: 'About Us', link: '/about' },
+    { id: 'menuData5', label: 'Blog', link: '/blog' },
+    { id: 'menuData6', label: 'Calculator', link: '' },
+]
 
 // footer data
 export interface IFooterSocialLinksItem {
@@ -146,131 +123,6 @@ export const quickToolsData: IQuickToolItem[] = [
         action: "openCalculator",
         variant: "neutral",
     },
-]
-
-// services grid data
-export interface IServiceItem {
-    id: string,
-    label: string,
-    icon: string,
-    href: string,
-    highlighted?: boolean,
-}
-
-export const servicesGridData: IServiceItem[] = [
-    {
-        id: "svc1",
-        label: "Business NTN",
-        icon: "/assets/services/service1.svg",
-        href: "/services/business-ntn",
-        highlighted: true
-    },
-
-    {
-        id: "svc2",
-        label: "Simple NTN Registration",
-        icon: "/assets/services/service2.svg",
-        href: "/services/ntn-registration"
-    },
-
-    {
-        id: "svc3",
-        label: "Business Registration",
-        icon: "/assets/services/service3.svg",
-        href: "/services/business-registration"
-    },
-
-    {
-        id: "svc4",
-        label: "Company Registration",
-        icon: "/assets/services/service4.svg",
-        href: "/services/company-registration"
-    },
-
-    {
-        id: "svc5",
-        label: "Filer Registration",
-        icon: "/assets/services/service5.svg",
-        href: "/services/filer-registration"
-    },
-
-    {
-        id: "svc6",
-        label: "Tax Return Filing",
-        icon: "/assets/services/service6.svg",
-        href: "/services/income-tax-return-filing"
-    },
-
-    {
-        id: "svc7",
-        label: "Imp & Exp License (PSW)",
-        icon: "/assets/services/service7.svg",
-        href: "/services/psw-license"
-    },
-
-    {
-        id: "svc8",
-        label: "GST Registration",
-        icon: "/assets/services/service8.svg",
-        href: "/services/sales-tax-registration"
-    },
-
-    {
-        id: "svc9",
-        label: "Trade Mark Registration",
-        icon: "/assets/services/service9.svg",
-        href: "/services/trademark-registration"
-    },
-
-    {
-        id: "svc10",
-        label: "DNFBP",
-        icon: "/assets/services/service10.svg",
-        href: "/services/dnfbp"
-    },
-
-    {
-        id: "svc11",
-        label: "PSEB",
-        icon: "/assets/services/service11.svg",
-        href: "/services/pseb"
-    },
-
-    {
-        id: "svc12",
-        label: "PEC Registration",
-        icon: "/assets/services/service12.svg",
-        href: "/services/pec-registration"
-    },
-
-    {
-        id: "svc13",
-        label: "Chamber Membership",
-        icon: "/assets/services/service13.svg",
-        href: "/services/chamber-membership"
-    },
-
-    {
-        id: "svc14",
-        label: "DTS Registration",
-        icon: "/assets/services/service14.svg",
-        href: "/services/dts-registration"
-    },
-
-    {
-        id: "svc15",
-        label: "FBR Notices",
-        icon: "/assets/services/service15.svg",
-        href: "/services/fbr-notices"
-    },
-
-    {
-        id: "svc16",
-        label: "SECP Compliances",
-        icon: "/assets/services/service16.svg",
-        href: "/services/secp-compliances"
-    },
-
 ]
 
 // home why filernow data
@@ -531,7 +383,8 @@ export const advantageStackData: IAdvantageItem[] = [
         title: "One Platform for Every Compliance Need",
         description: "From NTN and GST registration to trademark filing and SECP incorporation — every service a growing business needs, handled under one roof.",
         stats: [
-            { value: `${servicesGridData.length}+`, label: "Services Covered" }, // derived from your existing services grid, not hardcoded
+            // { value: `${servicesGridData.length}+`, label: "Services Covered" }, // derived from your existing services grid, not hardcoded
+            { value: "16+", label: "Services Covered" }, // derived from your existing services grid, not hardcoded
             { value: "5+", label: "Client Segments Served" },
         ],
         bottomText: "Individuals, freelancers, startups, SMEs and companies.",
@@ -540,45 +393,6 @@ export const advantageStackData: IAdvantageItem[] = [
         imageAlt: "Business compliance documentation",
         imageProofBadge: "Full Service Range",
         reverse: true,
-    },
-]
-
-export interface IFaqItem {
-    id: string,
-    question: string,
-    answer: string,
-}
-
-export const faqData: IFaqItem[] = [
-    {
-        id: "faq-1",
-        question: "Who needs to file a tax return and what's required?",
-        answer: "Any individual or business earning taxable income in Pakistan should file a return. You typically need your CNIC, income details, bank statements and any deduction certificates. Our consultants review everything and file it for you.",
-    },
-    {
-        id: "faq-2",
-        question: "Why do I need NTN and how to apply?",
-        answer: "NTN is essential to file taxes and appear in FBR’s system. Required for salaried persons, freelancers, and business owners.",
-    },
-    {
-        id: "faq-3",
-        question: "What's the benefit of being a filer in Pakistan?",
-        answer: "Filer status brings lower tax rates, property/car registration savings, and ATL eligibility.",
-    },
-    {
-        id: "faq-4",
-        question: "Should I go for sole proprietorship or company?",
-        answer: "Sole proprietorship is quick and simple. For scaling and legal protection, go with a Private Limited company.",
-    },
-    {
-        id: "faq-5",
-        question: "When is GST needed and what's the benefit?",
-        answer: "GST is required if sales exceed Rs. 10 million or if you deal in taxable goods/services. It allows you to issue invoices and claim input tax.",
-    },
-    {
-        id: "faq-6",
-        question: "Do I need a license to import or export?",
-        answer: "Yes. PSW & WEBOC are mandatory for international trade, even for small traders or Amazon sellers.",
     },
 ]
 
@@ -649,123 +463,6 @@ export const processTimelineData: IProcessPanel[] = [
             tags: ["FBR Submission", "Filing Record", "Confirmation"],
         },
     },
-]
-
-// custom testimonials
-export interface IHomeTestimonialItem {
-    id: string,
-    name: string,
-    role: string,
-    avatarSrc?: string,
-    rating: number,
-    review: string,
-}
-
-export const homeTestimonialsData: IHomeTestimonialItem[] = [
-    {
-        id: "testimonial1",
-        name: "Muhammad Adeel",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi1.jpg",
-        rating: 5,
-        review: "Excellent service from start to finish. The team at FilerNow is professional, friendly, and always available to answer questions. They resolved my FBR issues quickly and made the entire process simple and hassle-free. I highly recommend their services.",
-    },
-    {
-        id: "testimonial2",
-        name: "Muhammad mughal",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi2.png",
-        rating: 5,
-        review: "I was struggling in tax filing. FilerNow helped me in the process. The team is professional and competent.",
-    },
-    {
-        id: "testimonial3",
-        name: "Wajahat ali Siddiqui",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi3.png",
-        rating: 5,
-        review: "My experience has been quite good so far. They focus on customer satisfaction.",
-    },
-    {
-        id: "testimonial4",
-        name: "Faisal Durrani",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi4.png",
-        rating: 5,
-        review: "They handled my sales tax with great care. Smooth process and great support!",
-    },
-    {
-        id: "testimonial5",
-        name: "Shoaib Shair",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi5.png",
-        rating: 4,
-        review: "Highly recommended service for all tax and business needs in Pakistan!",
-    },
-    {
-        id: "testimonial6",
-        name: "Asad Rajpoot",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi6.png",
-        rating: 4,
-        review: "Extremely helpful and prompt communication. Truly impressed!",
-    },
-    {
-        id: "testimonial7",
-        name: "M. Saboor",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi7.png",
-        rating: 4,
-        review: "Reliable, quick, and professional service. Filing taxes is no longer a pain!",
-    },
-    {
-        id: "testimonial8",
-        name: "Qalb e Mominz",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi8.png",
-        rating: 4,
-        review: "The support I got from this team was outstanding.",
-    },
-    {
-        id: "testimonial9",
-        name: "Ismail Lilla",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi9.png",
-        rating: 4,
-        review: "Thank you for making tax filing this easy! Great experience.",
-    },
-    {
-        id: "testimonial10",
-        name: "Muhammad Shahid",
-        role: "Verified Client",
-        avatarSrc: "/assets/testi/testi10.png",
-        rating: 4,
-        review: "Definitely recommended. The team is knowledgeable and helpful.",
-    },
-    // {
-    //     id: "testimonial11",
-    //     name: "Engr. Shah Nawaz Saeed",
-    //     role: "Verified Client",
-    //     avatarSrc: "/assets/testi/testi11.png",
-    //     rating: 4,
-    //     review: "Smooth, fast, and professional work. I’ll be back next year.",
-    // },
-    // {
-    //     id: "testimonial12",
-    //     name: "Shoaib Shair",
-    //     role: "Verified Client",
-    //     avatarSrc: "/assets/testi/testi12.png",
-    //     rating: 4,
-    //     review: "Highly recommended service for all tax and business needs in Pakistan!",
-    // },
-    // {
-    //     id: "testimonial13",
-    //     name: "Shoaib Shair",
-    //     role: "Verified Client",
-    //     avatarSrc: "/assets/testi/testi13.png",
-    //     rating: 4,
-    //     review: "Highly recommended service for all tax and business needs in Pakistan!",
-    // },
 ]
 
 // what we do about section

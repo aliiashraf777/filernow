@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import CategoryTag from "@/components/ui-custom/CategoryTag"
 import { formatTimeAgo } from "@/utils/formatTimeAgo"
-import type { IBlogPost } from "@/types/blog"
+import type { IBlogPost } from "@/lib/types/blogs/blog"
 
 type Props = {
     post: IBlogPost,
