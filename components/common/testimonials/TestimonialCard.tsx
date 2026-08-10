@@ -1,7 +1,7 @@
 import { Star, Quote } from "lucide-react"
 import Image from "next/image"
 import { cn } from "@/utils/cn"
-import { IHomeTestimonialItem } from "@/data/appData"
+import { IHomeTestimonialItem } from "@/data/testimonialsData"
 
 type Props = {
     testimonial: IHomeTestimonialItem,

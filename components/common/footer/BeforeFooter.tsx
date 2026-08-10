@@ -15,7 +15,7 @@ type Props = {
 
 const BeforeFooter = ({
     heading = "Ready to file your taxes the smart way?",
-    para = "Get expert help with tax filing, registration and compliance. Fast, secure and reliable — become a filer today.",
+    para = "Get expert help with tax filing, registration and compliance. Fast, secure and reliable, become a filer today.",
     primaryLabel = "Become a filer",
     primaryHref,
     secondaryLabel,
