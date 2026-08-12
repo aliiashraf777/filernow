@@ -1,7 +1,7 @@
 // lib/api/blogs.ts
 import { blogPosts } from "@/data/blogData"
 import { mapBlogPost, mapBlogListResponse, mapBlogCategory } from "./mappers"
-// import type { IBlogPost, IBlogListResponse, IBlogCategory } from "@/types/blog"
+import type { IBlogPost, IBlogListResponse, IBlogCategory } from "@/lib/types/blogs/blog"
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL
 

@@ -1,16 +1,42 @@
-import { IBlogAuthor, IBlogCategory, IBlogListResponse, IBlogPost } from "../types/blogs/blog"
+// lib/api/mappers.ts — Option B: FastAPI stays snake_case.
+import type { IBlogPost, IBlogAuthor, IBlogCategory, IBlogListResponse, IBlogFaqItem } from "@/lib/types/blogs/blog"
 
 type RawBlogAuthor = { name: string, role: string, avatar_src: string, bio?: string }
+type RawBlogFaqItem = { id: string, question: string, answer: string }
 type RawBlogPost = {
     id: string, slug: string, title: string, excerpt: string, category: string,
     cover_image: string, cover_image_alt: string, published_at: string,
-    read_time_minutes?: number, featured?: boolean, author?: RawBlogAuthor, content?: string,
+    read_time_minutes?: number, featured?: boolean, author?: RawBlogAuthor,
+    content?: string, faqs?: RawBlogFaqItem[],
 }
-type RawBlogCategory = { slug: string, label: string, count: number }
-type RawBlogListResponse = { items: RawBlogPost[], total: number, page: number, page_size: number }
+type RawBlogCategory = {
+    slug: string,
+    label: string,
+    count: number
+}
+
+type RawBlogListResponse = {
+    items: RawBlogPost[],
+    total: number,
+    page: number,
+    page_size: number
+}
 
 function mapBlogAuthor(raw: RawBlogAuthor): IBlogAuthor {
-    return { name: raw.name, role: raw.role, avatarSrc: raw.avatar_src, bio: raw.bio }
+    return {
+        name: raw.name,
+        role: raw.role,
+        avatarSrc: raw.avatar_src,
+        bio: raw.bio
+    }
+}
+
+function mapBlogFaqItem(raw: RawBlogFaqItem): IBlogFaqItem {
+    return {
+        id: raw.id,
+        question: raw.question,
+        answer: raw.answer
+    }
 }
 
 export function mapBlogPost(raw: RawBlogPost): IBlogPost {
@@ -27,13 +53,21 @@ export function mapBlogPost(raw: RawBlogPost): IBlogPost {
         featured: raw.featured,
         author: raw.author ? mapBlogAuthor(raw.author) : undefined,
         content: raw.content,
+        faqs: raw.faqs?.map(mapBlogFaqItem),
     }
 }
 
 export function mapBlogCategory(raw: RawBlogCategory): IBlogCategory {
-    return { slug: raw.slug, label: raw.label, count: raw.count }
+    return {
+        slug: raw.slug,
+        label: raw.label,
+        count: raw.count
+    }
 }
 
 export function mapBlogListResponse(raw: RawBlogListResponse): IBlogListResponse {
-    return { items: raw.items.map(mapBlogPost), total: raw.total, page: raw.page, pageSize: raw.page_size }
+    return {
+        items: raw.items.map(mapBlogPost),
+        total: raw.total, page: raw.page, pageSize: raw.page_size
+    }
 }

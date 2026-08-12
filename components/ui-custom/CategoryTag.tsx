@@ -5,9 +5,6 @@ type Props = {
     className?: string,
 }
 
-// intentionally separate from InfoBadge - InfoBadge's pulsing-dot
-// styling reads as a "live status" indicator (used for eyebrows like
-// "Testimonials"); a blog category is just a static classification tag
 const CategoryTag = ({ label, className }: Props) => {
     return (
         <span className={cn(

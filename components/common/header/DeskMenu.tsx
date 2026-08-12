@@ -77,7 +77,11 @@ const DeskMenu = () => {
                     )
                 }
                 return (
-                    <Link key={menu.id} href={menu.link} className={cn("para-small text-text-secondary font-medium hover:text-primary default-transition", pathname === menu.link && "text-primary")}>
+                    <Link
+                        key={menu.id}
+                        href={menu.link}
+                        className={cn("para-small text-text-secondary font-medium hover:text-primary default-transition", pathname === menu.link && "text-primary")}
+                    >
                         {menu.label}
                     </Link>
                 )

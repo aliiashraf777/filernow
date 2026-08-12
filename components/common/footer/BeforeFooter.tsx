@@ -3,23 +3,28 @@ import SectionContainer from "../section/SectionContainer"
 import { ArrowRight } from "lucide-react"
 import Button, { AnchorBtn, LinkBtn } from "../btns/Button"
 import RevealOnScroll from "@/components/ui-custom/RevealOnScroll"
+import { FaWhatsapp } from "react-icons/fa"
 
 type Props = {
     heading?: string,
     para?: string,
     primaryLabel?: string,
     primaryHref?: string,
+    primaryIcon?: React.ReactNode
     secondaryLabel?: string,
     secondaryHref?: string,
+    secondaryIcon?: React.ReactNode
 }
 
 const BeforeFooter = ({
     heading = "Ready to file your taxes the smart way?",
     para = "Get expert help with tax filing, registration and compliance. Fast, secure and reliable, become a filer today.",
     primaryLabel = "Become a filer",
-    primaryHref,
+    primaryHref = "/become-filer",
+    primaryIcon = <ArrowRight size={20} />,
     secondaryLabel,
     secondaryHref,
+    secondaryIcon = <FaWhatsapp size={20} />,
 }: Props) => {
     return (
         <SectionContainer containerClass="container-y-padding pt-0">
@@ -68,7 +73,12 @@ const BeforeFooter = ({
                         <div className="flex flex-wrap items-center justify-center gap-3">
                             <RevealOnScroll delay={500}>
                                 {primaryHref ? (
-                                    <LinkBtn href={primaryHref} label={primaryLabel} icon={<ArrowRight size={20} />} />
+                                    <LinkBtn
+                                        href={primaryHref}
+                                        label={primaryLabel}
+                                        // icon={<ArrowRight size={20} />}
+                                        icon={primaryIcon}
+                                    />
                                 ) : (
                                     <Button>
                                         {primaryLabel}
@@ -79,7 +89,13 @@ const BeforeFooter = ({
 
                             <RevealOnScroll delay={600}>
                                 {secondaryLabel && secondaryHref && (
-                                    <AnchorBtn href={secondaryHref} openOnNewTab label={secondaryLabel} variant="white" />
+                                    <AnchorBtn
+                                        href={secondaryHref}
+                                        openOnNewTab
+                                        label={secondaryLabel}
+                                        // icon={<FaWhatsapp size={20} />}
+                                        icon={secondaryIcon}
+                                        variant="white" />
                                 )}
                             </RevealOnScroll>
                         </div>

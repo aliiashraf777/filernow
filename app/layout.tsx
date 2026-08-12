@@ -53,7 +53,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col text-text-dark bg-page-bg default-transition">
+      <body
+        className="min-h-full flex flex-col text-text-dark bg-page-bg default-transition"
+        suppressHydrationWarning
+      >
         <FilerStatusContextProvider>
           <CalculatorContextProvider>
             <FilerSplashLoader />
