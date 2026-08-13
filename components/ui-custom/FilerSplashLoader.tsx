@@ -27,7 +27,7 @@ const FilerSplashLoader = () => {
                 if (e.propertyName === "opacity" && isFadingOut) setIsMounted(false)
             }}
             className={cn(
-                "fixed inset-0 z-[999] flex items-center justify-center backdrop-blur-lg",
+                "fixed inset-0 z-[999] flex items-center justify-center bg-black/15 backdrop-blur-sm default-transition",
                 "transition-opacity duration-500 ease-out motion-reduce:duration-0",
                 isFadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
             )}

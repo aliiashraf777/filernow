@@ -1,48 +1,51 @@
+// components/header/MenuBar.tsx
 "use client"
 
-import Button, { LinkBtn } from "@/components/common/btns/Button"
+import { useState } from "react"
+import Button, { IconSmallBtn, LinkBtn } from "@/components/common/btns/Button"
 import SectionContainer from "../section/SectionContainer"
 import Image from "next/image"
-import { FileBadge, Menu } from "lucide-react"
+import { FileBadge, Menu, UserRound } from "lucide-react"
 import Link from "next/link"
 import DeskMenu from "./DeskMenu"
 import ThemeToggle from "@/components/theme/ThemeToggle"
 import { cn } from "@/utils/cn"
 import { useStickyHeader } from "@/hooks/useStickyHeader"
+import { useAuthDrawer } from "@/context/AuthDrawerContext"
+import MobileMenuDrawer from "./mobileMenu/MobileMenuDrawer"
 
 type Props = {}
 
 const MenuBar = (props: Props) => {
-
-    // on scroll header stick
     const { isScrolled } = useStickyHeader(".menubar")
+    const { openAuthDrawer } = useAuthDrawer()
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     return (
         <SectionContainer
             sectionClass={cn(
-                "menubar bg-whitex bg-background border-b border-border-clr/25",
+                "menubar bg-background border-b border-border-clr/25",
                 isScrolled && "scrolled",
             )}
             containerClass="py-1.5"
         >
             <div className="flex justify-between items-center">
-                <Link
-                    href={'/'}
-                    className="hover:-translate-y-0.5 default-transition"
-                >
-                    <Image
-                        src={'/assets/headerLogo.svg'}
-                        alt="header_logo"
-                        width={58}
-                        height={58}
-                        priority
-                        className="-ml-1"
-                    />
+                <Link href={'/'} className="hover:-translate-y-0.5 default-transition">
+                    <Image src={'/assets/headerLogo.svg'} alt="header_logo" width={58} height={58} priority className="-ml-1" />
                 </Link>
 
                 <DeskMenu />
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-4">
+                    <IconSmallBtn
+                        // onClick={() => openAuthDrawer("signin")}
+                        onClick={() => setIsMobileMenuOpen(true)}
+                        ariaLabel="Sign in or register"
+                        className="hidden md:flex"
+                    >
+                        <UserRound size={20} />
+                    </IconSmallBtn>
+
                     <ThemeToggle />
 
                     <LinkBtn
@@ -52,14 +55,20 @@ const MenuBar = (props: Props) => {
                         className="hidden md:flex"
                     />
 
-                    <Button
-                        variant="primary-light"
-                        className="border-transparent p-2 flex md:hidden"
+                    <IconSmallBtn
+                        onClick={() => setIsMobileMenuOpen(true)}
+                        ariaLabel="toggle mobile menu"
+                        className="md:hidden p-2 bg-primary-lighter"
                     >
-                        <Menu size={20} />
-                    </Button>
+                        <Menu size={20} className="text-primary" />
+                    </IconSmallBtn>
                 </div>
             </div>
+
+            <MobileMenuDrawer
+                isOpen={isMobileMenuOpen}
+                onClose={() => setIsMobileMenuOpen(false)}
+            />
         </SectionContainer>
     )
 }

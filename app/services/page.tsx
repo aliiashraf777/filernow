@@ -26,7 +26,10 @@ const ServicesPage = () => (
 
         <OurServices />
 
-        <Faqs faqData={faqData} />
+        <Faqs
+            faqData={faqData}
+            paddingClass="pt-0"
+        />
 
         <HomeTestimonials />
 
