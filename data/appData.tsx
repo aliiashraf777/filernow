@@ -113,7 +113,7 @@ export const quickToolsData: IQuickToolItem[] = [
         title: "Check Filer Status",
         description: "Instantly verify if you are on the FBR Active Taxpayer List.",
         action: "openFilerStatus",
-        variant: "primary",
+        variant: "neutral",
     },
     {
         id: "quickTool2",

@@ -44,8 +44,9 @@ export default function RootLayout({
             __html: `
               try {
                   const stored = localStorage.getItem('theme');
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (stored === 'dark' || (!stored && prefersDark)) {
+                  // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  // if (stored === 'dark' || (!stored && prefersDark)) {
+                  if (stored === 'dark') {
                       document.documentElement.classList.add('dark');
                   }
               } catch (e) {}
@@ -53,7 +54,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col text-text-dark bg-page-bg default-transition">
+      <body
+        className="min-h-full flex flex-col text-text-dark bg-page-bg default-transition"
+        suppressHydrationWarning
+      >
         <FilerStatusContextProvider>
           <CalculatorContextProvider>
             <FilerSplashLoader />

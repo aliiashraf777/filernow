@@ -69,7 +69,7 @@ export const AnchorBtn = ({ href, openOnNewTab, label, icon, variant = 'primary'
         aria-label={label}
         className={variantClasses(variant, size, attentionGrabbing, className)}
     >
-        <span className={cn("relative z-10 flex items-center gap-2", spanClass)}>{icon}{label}</span>
+        <span className={cn("relative z-10 flex items-center gap-2", spanClass)}>{label}{icon}</span>
     </a>
 )
 

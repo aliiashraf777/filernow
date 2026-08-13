@@ -8,7 +8,7 @@ type Props = {
     className?: string,
 }
 
-const Loader = ({ size = 170, label = "Loading", className }: Props) => {
+const Loader = ({ size = 170, label, className }: Props) => {
     return (
         <div
             role="status"

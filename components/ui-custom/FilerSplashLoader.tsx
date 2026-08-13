@@ -27,12 +27,13 @@ const FilerSplashLoader = () => {
                 if (e.propertyName === "opacity" && isFadingOut) setIsMounted(false)
             }}
             className={cn(
-                "fixed inset-0 z-[999] flex items-center justify-center bg-background",
+                "fixed inset-0 z-[999] flex items-center justify-center backdrop-blur-lg",
                 "transition-opacity duration-500 ease-out motion-reduce:duration-0",
                 isFadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
             )}
         >
-            <Loader size={170} label="Loading FilerNow" />
+            {/* <Loader size={170} label="Loading FilerNow" /> */}
+            <Loader size={170} />
         </div>
     )
 }

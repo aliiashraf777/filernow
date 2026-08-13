@@ -36,7 +36,10 @@ export default function Home() {
 
       {/* <OurAdvantageStack /> */}
 
-      <Faqs faqData={faqData} />
+      <Faqs
+        faqData={faqData}
+        paddingClass="pt-0"
+      />
 
       <HomeTestimonials />
 

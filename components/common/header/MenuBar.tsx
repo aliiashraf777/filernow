@@ -46,7 +46,7 @@ const MenuBar = (props: Props) => {
                     <ThemeToggle />
 
                     <LinkBtn
-                        href="/become-a-filer"
+                        href="/become-filer"
                         label="Become a filer"
                         icon={<FileBadge size={16} />}
                         className="hidden md:flex"

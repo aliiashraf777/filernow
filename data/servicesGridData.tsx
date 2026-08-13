@@ -15,7 +15,7 @@ export const servicesGridData: IServiceItem[] = [
         icon: "/assets/services/service1.svg",
         href: "/services/business-ntn-registration",
         category: "registration",
-        highlighted: true
+        // highlighted: true
     },
 
     {

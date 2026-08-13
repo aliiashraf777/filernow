@@ -18,7 +18,7 @@ const ServiceCard = ({ label, icon, href, highlighted }: Props) => {
                 highlighted
                     ? "border-primary/20 shadow-service-card"
                     : "border-border-clr hover:border-primary/20",
-            )}
+            )} 
         >
             <span
                 className={cn("flex items-center justify-center w-[90px] h-[90px] rounded-full bg-primary-lighter group-hover:scale-115 default-transition"

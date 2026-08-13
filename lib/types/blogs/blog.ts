@@ -11,6 +11,17 @@ export interface IBlogAuthor {
     bio?: string,
 }
 
+// deliberately NOT imported from data/appData's IFaqItem — that would
+// make a types file depend on a data file, backwards from how the rest
+// of this app is layered. Same shape ({id, question, answer}) means
+// FaqAccordion (which expects IFaqItem[]) accepts IBlogFaqItem[] anyway —
+// TypeScript matches by structure, not by import path.
+export interface IBlogFaqItem {
+    id: string
+    question: string
+    answer: string
+}
+
 export interface IBlogPost {
     id: string,
     slug: string,               // drives /blog/[slug]
@@ -25,6 +36,7 @@ export interface IBlogPost {
     featured?: boolean,         // true = eligible for the home page widget
     author?: IBlogAuthor,
     content?: string,           // full body — only present on the detail-page fetch, not the list fetch
+    faqs?: IBlogFaqItem[]   // per-post FAQs — see §8 below
 }
 
 export interface IBlogCategory {
