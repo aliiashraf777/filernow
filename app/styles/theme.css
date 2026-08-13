@@ -16,6 +16,7 @@
     --color-text-secondary-muter: var(--text-secondary-muter);
     --color-text-tertiary: var(--text-tertiary);
     --color-text-muted: var(--text-muted);
+    --color-text-link: var(--text-link);
 
     --color-page-bg: var(--page-bg-clr);
     --color-card-bg-clr: var(--card-bg-clr);

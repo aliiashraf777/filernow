@@ -8,7 +8,7 @@ const FaqAnswer = ({ answer }: { answer: string | FaqAnswerPart[] }) => (
     <p className="para-small text-text-secondary leading-[22.75px]">
         {toParts(answer).map((part, i) =>
             part.type === "link" ? (
-                <Link key={i} href={part.href} className="text-primary font-semibold underline underline-offset-2 hover:text-primary/80 default-transition">
+                <Link key={i} href={part.href} className="text-primary text-text-link font-semibold underline underline-offset-2 hover:text-primary/80 default-transition">
                     {part.content}
                 </Link>
             ) : (

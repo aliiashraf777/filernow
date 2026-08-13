@@ -15,8 +15,8 @@ const BlogMarkdown = ({ content }: { content: string }) => (
                         <span>{children}</span>
                     </li>
                 ),
-                strong: ({ children }) => <strong className="font-semibold text-text-dark">{children}</strong>,
-                a: ({ href, children }) => <a href={href} className="font-medium text-primary underline underline-offset-2">{children}</a>,
+                strong: ({ children }) => <strong className="font-semibold text-primary">{children}</strong>,
+                a: ({ href, children }) => <a href={href} className="font-medium text-text-link underline underline-offset-2">{children}</a>,
             }}
         >
             {content}

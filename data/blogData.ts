@@ -13,8 +13,8 @@ import type { IBlogPost } from "@/lib/types/blogs/blog"
 const usmanAuthor = {
     name: "Muhammad Usman, ACA",
     role: "Senior Tax Consultant & Financial Advisory Lead",
-    avatarSrc: "/assets/blog/authors/usman.png",
-    // avatarSrc: "/assets/testi/testi1.jpg",
+    avatarSrc: "/assets/testi/testi1.jpg",
+    // avatarSrc: "/assets/blog/authors/usman.png",
     bio: "Muhammad Usman is a Chartered Accountant with over 10 years of experience helping corporate clients, startups, and freelancers navigate the complex tax landscape of Pakistan and FBR regulations.",
 }
 
@@ -43,6 +43,63 @@ export const blogPosts: IBlogPost[] = [
         coverImageAlt: "Coins in a jar next to financial records and a notebook",
         publishedAt: daysAgo(1),
         readTimeMinutes: 8,
+        featured: true,
+        author: usmanAuthor,
+        content: `## What Are Tax Deductions?
+
+Tax deductions are legal provisions under the [Income Tax Ordinance, 2001](/), of Pakistan that allow taxpayers to reduce their total gross income. By reducing your [taxable income](/), the final tax liability you owe to the [Federal Board of Revenue (FBR)](/) is lowered significantly. It is crucial to distinguish between direct deductions from **taxable income** [versus tax credits](/), which directly offset your final tax bill.
+
+## Types of Tax Deductions Available in Pakistan
+
+Under current Pakistani tax laws, [salaried individuals](/), [business owners](/), and [freelancers](/) can take advantage of several specific deductions and allowances:
+
+- **Charitable Donations:** Donations made to non-profit organizations, boards, and educational institutions approved under the Second Schedule of the Income Tax Ordinance can yield significant tax rebates.
+- **Investment in Shares and Insurance:** Tax credits are available for investments in new shares, mutual funds, and life insurance premiums, subject to statutory limits based on your taxable income.
+- **Pension Fund Contributions:** Contributions made to approved Voluntary Pension Schemes (VPS) are eligible for tax deductions of up to 20% of the taxpayer's taxable income for the year.
+- **House Loan Interest Payments:** Deductions can be claimed on markup or profit paid on home loans for construction or purchase of a primary residence from scheduled banks.
+
+## How to Claim Tax Deductions
+
+To legally claim these deductions, they must be properly declared in your annual **Income Tax Return** submitted through the **IRIS portal** of the **FBR**. For salaried individuals, you must submit proof of investment, home loan markup certificates, or donation receipts to your employer's HR or finance department before the end of the **fiscal year (June 30th)** so they can adjust the tax withholding accordingly.
+
+## Common Mistakes to Avoid
+
+- Failing to retain original receipts, bank statements, or certificates of investment.
+- Claiming donations made to unapproved or unregistered charitable trusts.
+- Confusing tax deductions (reducing taxable income) with tax credits (reducing tax liability directly).
+- Failing to report foreign-sourced income if you are a tax resident in Pakistan.
+
+## Conclusion
+
+Being proactive about **tax planning** can save you substantial amounts of money annually. Leveraging the legal allowances provided under Pakistani tax laws is a smart financial strategy for both individuals and businesses. If you're unsure about your deductions, consult a professional filer service like **FilerNow** to ensure complete compliance.`,
+        faqs: [
+            {
+                id: "faq-1",
+                question: "Is Zakat deductible from my taxable salary?",
+                answer: "Yes — Zakat paid under the Zakat and Ushr Ordinance is deducted before your taxable income is calculated, as long as it's deducted at source or paid against a valid Zakat certificate.",
+            },
+            {
+                id: "faq-2",
+                question: "Do provident fund contributions reduce my tax?",
+                answer: "Contributions to a recognized provident fund are exempt up to the limits set by FBR each year — check the current year's limit before assuming full exemption.",
+            },
+            {
+                id: "faq-3",
+                question: "Can I claim medical allowance as a deduction?",
+                answer: "Medical allowance up to 10% of basic salary is exempt if it isn't separately reimbursed by your employer. If your employer reimburses actual medical bills instead, the allowance itself becomes taxable.",
+            },
+        ],
+    },
+    {
+        id: "blog1",
+        slug: "how-to-file-a-tax-return-in-pakistan-2025",
+        title: "How To File A Tax Return In Pakistan 2025",
+        excerpt: "Step-by-step walkthrough of the active tax filing process for individuals and salaried class.",
+        category: "Guides",
+        coverImage: "/assets/blog/blog2.png",
+        coverImageAlt: "Hands typing on a laptop with a tax filing form open",
+        publishedAt: daysAgo(5),
+        readTimeMinutes: 6,
         featured: true,
         author: usmanAuthor,
         content: `## Understanding Salary Tax Deductions
@@ -86,22 +143,6 @@ Many salaried employees assume their employer automatically applies every eligib
                 answer: "Medical allowance up to 10% of basic salary is exempt if it isn't separately reimbursed by your employer. If your employer reimburses actual medical bills instead, the allowance itself becomes taxable.",
             },
         ],
-    },
-    {
-        id: "blog1",
-        slug: "how-to-file-a-tax-return-in-pakistan-2025",
-        title: "How To File A Tax Return In Pakistan 2025",
-        excerpt: "Step-by-step walkthrough of the active tax filing process for individuals and salaried class.",
-        category: "Guides",
-        coverImage: "/assets/blog/blog2.png",
-        coverImageAlt: "Hands typing on a laptop with a tax filing form open",
-        publishedAt: daysAgo(5),
-        readTimeMinutes: 6,
-        featured: true,
-        author: usmanAuthor,
-        content: `## What You'll Need
-
-                [Placeholder content — full copy pending. Structure: required documents list, IRIS portal walkthrough, typical processing time, common rejection reasons.]`,
     },
     {
         id: "blog2",

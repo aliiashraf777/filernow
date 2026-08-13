@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Stay up to date with the latest tax guidelines, FBR changes, SECP rules, and compliance strategies for business owners and freelancers in Pakistan.",
 }
 
-const PAGE_SIZE = 9
+const PAGE_SIZE = 6
 
 type Props = {
     searchParams: Promise<{ category?: string, search?: string }>,
@@ -42,7 +42,10 @@ export default async function BlogListingPage({ searchParams }: Props) {
             </SectionContainer>
 
             <SectionContainer containerClass="container-y-padding">
-                <BlogGrid initialData={listData} />
+                <BlogGrid
+                    initialData={listData}
+                    pageSize={PAGE_SIZE}
+                />
             </SectionContainer>
 
             <BeforeFooter />

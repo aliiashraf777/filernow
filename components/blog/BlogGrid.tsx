@@ -6,11 +6,14 @@ import { Loader2 } from "lucide-react"
 import BlogCard from "./BlogCard"
 import type { IBlogPost, IBlogListResponse } from "@/lib/types/blogs/blog"
 
-const PAGE_SIZE = 9
+// const PAGE_SIZE = 9
 
-type Props = { initialData: IBlogListResponse }
+type Props = {
+    initialData: IBlogListResponse,
+    pageSize: number,
+}
 
-const BlogGrid = ({ initialData }: Props) => {
+const BlogGrid = ({ initialData, pageSize }: Props) => {
     const searchParams = useSearchParams()
     const category = searchParams.get("category") ?? ""
     const search = searchParams.get("search") ?? ""
@@ -36,7 +39,8 @@ const BlogGrid = ({ initialData }: Props) => {
             if (category) params.set("category", category)
             if (search) params.set("search", search)
             params.set("page", String(page + 1))
-            params.set("pageSize", String(PAGE_SIZE))
+            // params.set("pageSize", String(PAGE_SIZE))
+            params.set("pageSize", String(pageSize))
 
             const res = await fetch(`/api/blogs?${params.toString()}`)
             const data: IBlogListResponse = await res.json()

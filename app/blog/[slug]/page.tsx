@@ -64,7 +64,13 @@ export default async function BlogDetailPage({ params }: Props) {
                 <div className="mt-4 flex flex-wrap items-center gap-3 para-small text-text-secondary-muter">
                     {post.author && (
                         <span className="flex items-center gap-2">
-                            <Image src={post.author.avatarSrc} alt={post.author.name} width={28} height={28} className="h-7 w-7 rounded-full object-cover sheen-sweep-hover overflow-hidden" />
+                            <Image
+                                src={post.author.avatarSrc}
+                                alt={post.author.name}
+                                width={28}
+                                height={28}
+                                className="h-7 w-7 rounded-full object-cover sheen-sweep-hover overflow-hidden"
+                            />
                             <span className="font-medium text-text-dark">{post.author.name}</span>
                         </span>
                     )}
@@ -81,8 +87,17 @@ export default async function BlogDetailPage({ params }: Props) {
             <SectionContainer containerClass="container-y-padding pt-0">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_320px]">
                     <article>
-                        {post.content && <BlogMarkdown content={post.content} />}
-                        {post.author && <div className="mt-10"><BlogAuthorCard author={post.author} /></div>}
+                        {post.content &&
+                            <BlogMarkdown
+                                content={post.content}
+                            />
+                        }
+
+                        {post.author &&
+                            <div className="mt-10">
+                                <BlogAuthorCard author={post.author} />
+                            </div>
+                        }
 
                         {/* {post.faqs && post.faqs.length > 0 && (
                             <div className="mt-10">
