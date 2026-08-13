@@ -51,6 +51,7 @@ const ServiceDetailPage = async ({ params }: Props) => {
             <Faqs
                 faqData={service.faqs}
                 sectionHeading="Common questions about this service"
+                paddingClass="pt-0"
             />
 
             <BeforeFooter />

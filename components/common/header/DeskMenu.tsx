@@ -1,3 +1,4 @@
+// components/header/DeskMenu.tsx
 "use client"
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown } from "lucide-react"
@@ -51,22 +52,35 @@ const DeskMenu = () => {
                             onMouseEnter={openMenu}
                             onMouseLeave={scheduleClose}
                         >
-                            <button
-                                type="button"
-                                onClick={() => setIsMegaMenuOpen((v) => !v)}
-                                aria-expanded={isMegaMenuOpen}
-                                aria-haspopup="true"
-                                className={cn(
-                                    "flex items-center gap-1 para-small font-medium text-text-secondary hover:text-primary default-transition cursor-pointer",
-                                    pathname.startsWith(menu.link) && "text-primary",
-                                )}
-                            >
-                                {menu.label}
-                                <ChevronDown
-                                    size={16}
-                                    className={cn("default-transition", isMegaMenuOpen && "rotate-180")}
-                                />
-                            </button>
+                            <div className="flex items-center gap-0.5">
+                                <Link
+                                    href={menu.link}
+                                    className={cn(
+                                        "para-small font-medium text-text-secondary hover:text-primary default-transition",
+                                        pathname.startsWith(menu.link) && "text-primary",
+                                    )}
+                                >
+                                    {menu.label}
+                                </Link>
+
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        setIsMegaMenuOpen((v) => !v)
+                                    }}
+                                    aria-expanded={isMegaMenuOpen}
+                                    aria-haspopup="true"
+                                    aria-label={`Toggle ${menu.label} menu`}
+                                    className="p-1 text-text-secondary hover:text-primary default-transition cursor-pointer"
+                                >
+                                    <ChevronDown
+                                        size={16}
+                                        className={cn("default-transition", isMegaMenuOpen && "rotate-180")}
+                                    />
+                                </button>
+                            </div>
 
                             {isMegaMenuOpen && (
                                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 ml-10 z-[var(--z-dialog,50)] animate-fade-slide-up">

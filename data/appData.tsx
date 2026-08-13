@@ -1,23 +1,26 @@
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa"
-import { ShieldCheck, Users, Clock, Scale, Heart, SearchCheck, Calculator } from "lucide-react"
+import { ShieldCheck, Users, Clock, Scale, Heart, SearchCheck, Calculator, LucideIcon, House, Info, StickyNotePlus } from "lucide-react"
 import { FileText, Receipt, ArrowLeftRight, Copyright, IdCard, Briefcase, ShoppingCart, Calendar } from "lucide-react"
 import { IWaveStepItem } from "@/lib/types/wave-steps/types";
+import { TbReceiptTax } from "react-icons/tb";
+import { IconType } from "react-icons";
 
 // Home menu data
 export interface IMenuDataItem {
     id: string,
+    icon?: LucideIcon | IconType,
     label: string,
     link: string,
     hasMegaMenu?: boolean,
 }
 
 export const menuData: IMenuDataItem[] = [
-    { id: 'menuData1', label: 'Home', link: '/' },
-    { id: 'menuData2', label: 'Services', link: '/services', hasMegaMenu: true },
-    { id: 'menuData3', label: 'Tax Rates', link: '/tax-rates' },
-    { id: 'menuData4', label: 'About Us', link: '/about' },
-    { id: 'menuData5', label: 'Blog', link: '/blog' },
-    { id: 'menuData6', label: 'Calculator', link: '' },
+    { id: 'menuData1', icon: House, label: 'Home', link: '/' },
+    { id: 'menuData2', icon: FileText, label: 'Services', link: '/services', hasMegaMenu: true },
+    { id: 'menuData3', icon: TbReceiptTax, label: 'Tax Rates', link: '/tax-rates' },
+    { id: 'menuData4', icon: Info, label: 'About Us', link: '/about' },
+    { id: 'menuData5', icon: StickyNotePlus, label: 'Blog', link: '/blog' },
+    { id: 'menuData6', icon: Calculator, label: 'Calculator', link: '' },
 ]
 
 // footer data

@@ -11,6 +11,7 @@ import TaxCalculatorDrawer from "@/components/home/calculator/TaxCalculatorDrawe
 import ScrollToTopButton from "@/components/ui-custom/ScrollToTopBtn";
 import { FilerStatusContextProvider } from "@/context/FilerStatusContext";
 import FilerStatusDrawer from "@/components/home/filerStatus/FilerStatusDrawer";
+import { AuthDrawerProvider } from "@/context/AuthDrawerContext";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -60,14 +61,18 @@ export default function RootLayout({
       >
         <FilerStatusContextProvider>
           <CalculatorContextProvider>
-            <FilerSplashLoader />
-            <Header />
-            {children}
-            <TaxCalculatorDrawer />
-            <FilerStatusDrawer />
-            <ScrollToTopButton />
-            {/* <BeforeFooter /> */}
-            <Footer />
+            <AuthDrawerProvider>
+
+              <FilerSplashLoader />
+              <Header />
+              {children}
+              <TaxCalculatorDrawer />
+              <FilerStatusDrawer />
+              <ScrollToTopButton />
+              {/* <BeforeFooter /> */}
+              <Footer />
+              
+            </AuthDrawerProvider>
           </CalculatorContextProvider>
         </FilerStatusContextProvider>
       </body>

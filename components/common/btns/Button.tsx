@@ -97,3 +97,23 @@ export const LinkBtn = ({ href, openOnNewTab, label, icon, variant = 'primary', 
         </span>
     </Link>
 )
+
+type IconSmallBtnProp = {
+    children: React.ReactNode,
+    onClick?: () => void,
+    ariaLabel?: string,
+    className?: string,
+}
+
+export const IconSmallBtn = ({ children, onClick, ariaLabel, className }: IconSmallBtnProp) => {
+    return (
+        <button
+            type="button"
+            onClick={onClick}
+            aria-label={ariaLabel}
+            className={cn("flex items-center justify-center w-9 h-9 bg-card-bg-clr rounded-brand-8 hover:bg-border-clr default-transition cursor-pointer", className)}
+        >
+            {children}
+        </button>
+    )
+}
