@@ -4,6 +4,7 @@ import { useRouter, useSearchParams, usePathname } from "next/navigation"
 import { cn } from "@/utils/cn"
 import { IBlogCategory } from "@/lib/types/blogs/blog"
 
+
 type Props = { categories: IBlogCategory[] }
 
 const BlogCategoryFilter = ({ categories }: Props) => {

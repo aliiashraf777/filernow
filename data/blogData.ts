@@ -241,7 +241,7 @@ Many salaried employees assume their employer automatically applies every eligib
         slug: "fbr-audit-response-best-practices",
         title: "FBR Audit Response Best Practices",
         excerpt: "What to do if you receive a tax notice under Section 122(9). Step-by-step checklist.",
-        category: "Guides",
+        category: "Tax Tips",
         coverImage: "/assets/blog/blog9.png",
         coverImageAlt: "Official tax notice documents on a desk with glasses",
         publishedAt: daysAgo(64),
