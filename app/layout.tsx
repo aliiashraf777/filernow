@@ -64,14 +64,8 @@ export default function RootLayout({
             <AuthDrawerProvider>
 
               <FilerSplashLoader />
-              <Header />
               {children}
-              <TaxCalculatorDrawer />
-              <FilerStatusDrawer />
-              <ScrollToTopButton />
-              {/* <BeforeFooter /> */}
-              <Footer />
-              
+
             </AuthDrawerProvider>
           </CalculatorContextProvider>
         </FilerStatusContextProvider>

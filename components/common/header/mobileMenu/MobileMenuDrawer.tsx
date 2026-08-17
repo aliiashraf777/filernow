@@ -10,7 +10,6 @@ import { groupServicesByCategory } from "@/lib/services/groupServicesByCategory"
 import { useAuthDrawer } from "@/context/AuthDrawerContext"
 import { cn } from "@/utils/cn"
 import SideDrawer from "../../sideDrawer/SideDrawer"
-// import SideDrawer from "@/components/common/SideDrawer"
 
 type Props = {
     isOpen: boolean
@@ -61,13 +60,33 @@ const MobileMenuDrawer = ({ isOpen, onClose }: Props) => {
                         strokeWidth={1.2}
                     />
                     <div className="flex items-center gap-2 para-base">
-                        <button type="button" onClick={() => handleAuthClick("signin")} className="text-text-secondary-muted font-semibold hover:text-primary default-transition cursor-pointer">
+                        <Link
+                            href="/login"
+                            className="text-text-secondary-muted font-semibold hover:text-primary default-transition cursor-pointer"
+                        >
+                            Login
+                        </Link>
+                        {/* <button
+                            type="button"
+                            // onClick={() => handleAuthClick("signin")}
+                            className="text-text-secondary-muted font-semibold hover:text-primary default-transition cursor-pointer"
+                        >
                             Sign in
-                        </button>
+                        </button> */}
                         <span className="text-text-secondary">|</span>
-                        <button type="button" onClick={() => handleAuthClick("register")} className="text-text-secondary-muted font-semibold hover:text-primary default-transition cursor-pointer">
+                        <Link
+                            href="/register"
+                            className="text-text-secondary-muted font-semibold hover:text-primary default-transition cursor-pointer"
+                        >
                             Register
-                        </button>
+                        </Link>
+                        {/* <button
+                            type="button"
+                            // onClick={() => handleAuthClick("register")}
+                            className="text-text-secondary-muted font-semibold hover:text-primary default-transition cursor-pointer"
+                        >
+                            Register
+                        </button> */}
                     </div>
                 </div>
 

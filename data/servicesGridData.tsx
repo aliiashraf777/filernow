@@ -75,9 +75,9 @@ export const servicesGridData: IServiceItem[] = [
     },
 
     {
-        id: "svc17",
+        id: "svc16",
         label: "Wealth Statement",
-        icon: "/assets/services/service17.svg",
+        icon: "/assets/services/service16.svg",
         href: "/services/service-wealth-statement",
         category: "compliance"
     },
