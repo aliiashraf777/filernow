@@ -5,8 +5,9 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { resetPasswordSchema, type ResetPasswordFormValues } from "@/lib/validations/auth";
-import { FormField } from "@/components/common/form/FormField";
+import { FormField, inputGenericClass } from "@/components/common/form/FormField";
 import { PasswordStrengthMeter } from "@/components/auth/PasswordStrengthMeter";
+import { cn } from "@/utils/cn";
 
 
 export default function ResetPasswordPage() {
@@ -69,7 +70,7 @@ export default function ResetPasswordPage() {
                         id="confirmPassword"
                         type="password"
                         placeholder="Enter New Password"
-                        className="rounded-md border border-border-clr px-4 py-3"
+                        className={cn("", inputGenericClass)}
                         {...register("confirmPassword")}
                     />
                 </FormField>

@@ -7,8 +7,8 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { loginSchema, type LoginFormValues } from "@/lib/validations/auth";
-import { FormField } from "@/components/common/form/FormField";
-import Image from "next/image";
+import { FormField, inputGenericClass } from "@/components/common/form/FormField";
+import { cn } from "@/utils/cn";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -54,7 +54,7 @@ export default function LoginPage() {
                         id="email"
                         type="text"
                         placeholder="Enter Email or User Name"
-                        className="rounded-md border border-border-clr px-4 py-3"
+                        className={cn("", inputGenericClass)}
                         {...register("email")}
                     />
                 </FormField>
@@ -65,7 +65,7 @@ export default function LoginPage() {
                             id="password"
                             type={showPassword ? "text" : "password"}
                             placeholder="Enter password"
-                            className="w-full rounded-md border border-border-clr px-4 py-3"
+                            className={cn("w-full", inputGenericClass)}
                             {...register("password")}
                         />
                         <button

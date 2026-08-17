@@ -8,6 +8,8 @@ interface FormFieldProps {
   children: ReactNode;
 }
 
+export const inputGenericClass = "rounded-md border border-border-clr px-4 py-3"
+
 export function FormField({ label, htmlFor, error, children }: FormFieldProps) {
   return (
     <div className="flex flex-col gap-1.5">

@@ -1,9 +1,9 @@
-// app/api/auth/resetPassword/route.ts
+// app/api/auth/forgot-password/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     const body = await req.json();
-    const res = await fetch(`${process.env.FASTAPI_INTERNAL_URL}/auth/reset-password`, {
+    const res = await fetch(`${process.env.FASTAPI_INTERNAL_URL}/auth/forgot-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

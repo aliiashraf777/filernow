@@ -6,8 +6,9 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { forgotPasswordSchema, type ForgotPasswordFormValues } from "@/lib/validations/auth";
-import { FormField } from "@/components/common/form/FormField";
+import { FormField, inputGenericClass } from "@/components/common/form/FormField";
 import { VerifyEmailModal } from "@/components/auth/VerfiyEmailModal";
+import { cn } from "@/utils/cn";
 
 
 export default function ForgotPasswordPage() {
@@ -54,7 +55,7 @@ export default function ForgotPasswordPage() {
                         id="email"
                         type="text"
                         placeholder="Enter email id"
-                        className="rounded-md border border-border-clr px-4 py-3"
+                        className={cn("", inputGenericClass)}
                         {...register("email")}
                     />
                 </FormField>

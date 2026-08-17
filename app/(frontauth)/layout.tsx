@@ -17,7 +17,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
                     width={520}
                     height={480}
                     priority
-                    className="capsule-breathe arc-breathex orbit-pingx loader-breathex icon-pulsex"
+                    className="capsule-breathe"
                 />
             </div>
 
