@@ -83,7 +83,7 @@ const DeskMenu = () => {
                             </div>
 
                             {isMegaMenuOpen && (
-                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 ml-10 z-[var(--z-dialog,50)] animate-fade-slide-up">
+                                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 ml-[10vw] z-[var(--z-dialog,50)] animate-fade-slide-up">
                                     <ServicesMegaMenu onNavigate={() => setIsMegaMenuOpen(false)} />
                                 </div>
                             )}
