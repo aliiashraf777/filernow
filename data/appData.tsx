@@ -1,5 +1,5 @@
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa"
-import { ShieldCheck, Users, Clock, Scale, Heart, SearchCheck, Calculator, LucideIcon, House, Info, StickyNotePlus } from "lucide-react"
+import { ShieldCheck, Users, Clock, Scale, Heart, SearchCheck, Calculator, LucideIcon, House, Info, StickyNotePlus, Headset } from "lucide-react"
 import { FileText, Receipt, ArrowLeftRight, Copyright, IdCard, Briefcase, ShoppingCart, Calendar } from "lucide-react"
 import { IWaveStepItem } from "@/lib/types/wave-steps/types";
 import { TbReceiptTax } from "react-icons/tb";
@@ -21,6 +21,7 @@ export const menuData: IMenuDataItem[] = [
     { id: 'menuData4', icon: Info, label: 'About Us', link: '/about' },
     { id: 'menuData5', icon: StickyNotePlus, label: 'Blog', link: '/blog' },
     { id: 'menuData6', icon: Calculator, label: 'Calculator', link: '' },
+    { id: 'menuData7', icon: Headset, label: 'Contact', link: '/contact' },
 ]
 
 // footer data

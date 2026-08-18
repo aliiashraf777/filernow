@@ -1,34 +1,55 @@
 import SectionContainer from "@/components/common/section/SectionContainer"
-import { ArrowRight } from "lucide-react"
-import { FaWhatsapp } from "react-icons/fa"
 import HeroTextbox from "../home/hero/HeroTextbox"
 import AboutHeroVisual from "./AboutHeroVisual"
+import { BreadcrumbItem } from "../ui-custom/Breadcrumb"
+import { HeroBottomRow, HeroCtaItem } from "@/lib/types/hero/types"
 
-type Props = {}
+type Props = {
+  sectionClass?: string,
+  paddingClass?: string,
+  containerClass?: string,
+  bgImage?: React.ReactNode,
+  backgroundGradient?: string,
 
-const AboutHero = (props: Props) => {
+  breadcrumbItems?: BreadcrumbItem[],
+  infoBadgeLabel: string,
+  heading: React.ReactNode,
+  description: string,
+  ctas?: HeroCtaItem[],
+  bottomRow?: HeroBottomRow,
+  className?: string,
+  headingClassName?: string,
+  aboutHeroImg: string,
+  redBlobHidden?: boolean,
+  aboutHeroVisualClass?: string,
+}
+
+const AboutHero = ({ sectionClass, paddingClass, containerClass, bgImage, backgroundGradient, breadcrumbItems, infoBadgeLabel, heading, description, ctas, bottomRow, className, headingClassName, aboutHeroImg, redBlobHidden, aboutHeroVisualClass }: Props) => {
   return (
-    <SectionContainer containerClass="relative">
+    <SectionContainer
+      sectionClass={sectionClass}
+      paddingClass={paddingClass}
+      containerClass="relative"
+      bgImage={bgImage}
+      backgroundGradient={backgroundGradient}
+    >
       <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
         <HeroTextbox
-          infoBadgeLabel="Who We Are"
-          heading={<>We Are Professional<br /><span className="text-primary">Filing Team</span></>}
-          description="FilerNow.com is Pakistan's trusted platform for online tax filing, NTN registration, and business compliance services. Our mission is to simplify tax and business processes by offering user-friendly, affordable, and digital solutions for individuals and businesses across Pakistan."
-          ctas={[
-            { label: "File Now", icon: <ArrowRight size={18} />, variant: "primary" },
-            { label: "Talk to an Expert", icon: <FaWhatsapp size={18} className="text-secondary" />, variant: "white" },
-          ]}
-          bottomRow={{
-            type: "stats",
-            items: [
-              { to: 95, suffix: "%", label: "Transparency" },
-              { to: 92, suffix: "%", label: "Commitment" },
-              { to: 99, suffix: "%", label: "Clients Satisfaction" },
-            ],
-          }}
+          breadcrumbItems={breadcrumbItems}
+          infoBadgeLabel={infoBadgeLabel}
+          heading={heading}
+          description={description}
+          ctas={ctas}
+          bottomRow={bottomRow}
+          className={className}
+          headingClassName={headingClassName}
         />
 
-        <AboutHeroVisual />
+        <AboutHeroVisual
+          aboutHeroImg={aboutHeroImg}
+          redBlobHidden={redBlobHidden}
+          aboutHeroVisualClass={aboutHeroVisualClass}
+        />
       </div>
 
     </SectionContainer>

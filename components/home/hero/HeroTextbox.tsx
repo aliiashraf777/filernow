@@ -19,6 +19,7 @@ type Props = {
 }
 
 const HeroTextbox = ({
+    breadcrumbItems,
     infoBadgeLabel,
     heading,
     description,
@@ -27,7 +28,7 @@ const HeroTextbox = ({
             label: "Become A Filer",
             icon: <ArrowRight size={18} />,
             variant: "primary",
-            href: "/become-a-filer",
+            href: "/become-filer",
         },
 
         {
@@ -41,10 +42,9 @@ const HeroTextbox = ({
     bottomRow,
     className,
     headingClassName,
-    breadcrumbItems,
 }: Props) => {
     return (
-        <div className={cn("pt-[50px]x md:pt-0x container-y-padding flex flex-col gap-4 md:gap-7", className)}>
+        <div className={cn("pt-[50px] md:container-y-padding flex flex-col gap-4 md:gap-7", className)}>
             {breadcrumbItems && <Breadcrumb items={breadcrumbItems} />}
 
             <InfoBadge
