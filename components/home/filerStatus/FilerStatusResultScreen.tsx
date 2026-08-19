@@ -1,3 +1,5 @@
+// components/home/filerStatus/FilerStatusResultScreen
+
 import { FilerCheckResponseTy } from "@/lib/types/filerStatus/types"
 import { cn } from "@/utils/cn"
 import { CheckCircle2, HelpCircle, XCircle } from "lucide-react"
