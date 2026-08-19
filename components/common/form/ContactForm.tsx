@@ -4,8 +4,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { contactFormSchema, ContactFormValues } from "@/lib/validations/leads";
-import { submitContactForm } from "@/lib/api/leads";
+import { contactFormSchema, ContactFormValues } from "@/lib/validations/leads-schema";
+import { submitContactForm } from "@/lib/api/leads-submit";
 import { FormField, inputGenericClass } from "./FormField";
 import { cn } from "@/utils/cn";
 

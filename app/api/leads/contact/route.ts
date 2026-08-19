@@ -3,7 +3,7 @@
 // Same proxy pattern as my auth routes, Next.js talks server-to-server to FastAPI via FASTAPI_INTERNAL_URL, no CORS config needed on the FastAPI side, and this route re-validates instead of trusting the client:
 
 import { NextRequest, NextResponse } from "next/server";
-import { contactFormSchema } from "@/lib/validations/leads";
+import { contactFormSchema } from "@/lib/validations/leads-schema";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
