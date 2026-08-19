@@ -77,7 +77,7 @@ export const becomeFilerFormSchema = z.object({
     .or(z.literal("")),
   // service: z.enum(filerServiceValues, {
   service_type: z.enum(filerServiceValues, {
-    errorMap: () => ({ message: "Select a service" }),
+    message: "Select a service"
   }),
   city: z.string().trim().min(5, "Enter your address").max(300),
   // ...honeypot,
