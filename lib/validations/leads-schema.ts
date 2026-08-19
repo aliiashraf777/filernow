@@ -1,4 +1,4 @@
-// lib/validations/leads.ts
+// lib/validations/leads-schema.ts
 import { z } from "zod";
 import { groupServicesByCategory } from "@/lib/services/groupServicesByCategory";
 
@@ -30,31 +30,31 @@ export const contactFormSchema = z.object({
     .trim()
     .min(10, "Message must be at least 10 characters")
     .max(2000),
-  // ...honeypot,
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;
-
 // -----------------------------------------------------------------------
-// Become-Filer form — field names match Umar's /api/admin/leads payload
+// Become-Filer form — field names match fastApi's /api/admin/leads payload
 // (username, service_type, city) as a deliberate, isolated adaptation.
 // Everything here is provisional pending confirmation that this endpoint
 // is actually public (see route.ts TODOs).
 // -----------------------------------------------------------------------
 export const FILER_SERVICE_GROUPS = groupServicesByCategory().map((group) => ({
   label: group.label,
-  options: group.items.map((item) => ({ value: item.id, label: item.label })),
+  // options: group.items.map((item) => ({ value: item.id, label: item.label })),
+  options: group.items.map((item) => ({ value: item.label, label: item.label })),
 }));
 
 const filerServiceValues = FILER_SERVICE_GROUPS.flatMap((g) =>
   g.options.map((o) => o.value),
 ) as [string, ...string[]];
 
-// Umar's sample payload shows a human-readable label ("Filer Registration"),
+// fast api sample payload shows a human-readable label ("Filer Registration"),
 // not the stable svc1–svc16 id. This map bridges that gap so the frontend
 // can still validate against the stable id while sending what his endpoint
 // currently expects. Flag to Umar: this is fragile — a label rename in
 // appData.tsx silently stops matching whatever his DB has stored.
+
 const serviceLabelById = new Map(
   FILER_SERVICE_GROUPS.flatMap((g) => g.options).map((o) => [o.value, o.label]),
 );
@@ -75,7 +75,8 @@ export const becomeFilerFormSchema = z.object({
     .email("Enter a valid email address")
     .optional()
     .or(z.literal("")),
-  service: z.enum(filerServiceValues, {
+  // service: z.enum(filerServiceValues, {
+  service_type: z.enum(filerServiceValues, {
     errorMap: () => ({ message: "Select a service" }),
   }),
   city: z.string().trim().min(5, "Enter your address").max(300),

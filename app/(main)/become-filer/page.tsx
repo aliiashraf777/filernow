@@ -1,5 +1,4 @@
-// app/(main)/become-a-filer/page.tsx
-
+// app/(main)/become-filer/page.tsx
 import Image from "next/image";
 import { BecomeFilerForm } from "@/components/common/form/BecomeFilerForm";
 import RevealOnScroll from "@/components/ui-custom/RevealOnScroll";
@@ -41,11 +40,11 @@ export default function BecomeAFilerPage() {
           <RevealOnScroll delay={0.1} className="">
             <div>
               <div className="w-full h-[20px]" />
-              <div className="rounded-2xl border border-border-clr bg-white p-8 my-[40px]x shadow-sm">
+              <div className="rounded-2xl border border-border-clr bg-background p-8 my-[40px]x shadow-sm">
                 <h1 className="text-2xl font-bold text-primary md:text-3xl">
                   Be Connected And Be Updated
                 </h1>
-                <p className="mt-2 text-sm text-gray-500">
+                <p className="mt-2 para-small text-gray-500">
                   It's essential that we use your authentic information for FBR filing and
                   keep you informed at every step.
                 </p>

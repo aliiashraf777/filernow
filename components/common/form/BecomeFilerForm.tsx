@@ -8,8 +8,8 @@ import {
   becomeFilerFormSchema,
   BecomeFilerFormValues,
   FILER_SERVICE_GROUPS,
-} from "@/lib/validations/leads";
-import { submitBecomeFilerForm } from "@/lib/api/leads";
+} from "@/lib/validations/leads-schema";
+import { submitBecomeFilerForm } from "@/lib/api/leads-submit";
 import { FormField, inputGenericClass } from "./FormField";
 import { FormSelectField } from "./FormSelectField";
 import { cn } from "@/utils/cn";
@@ -30,7 +30,8 @@ export function BecomeFilerForm() {
       username: "",
       email: "",
       phone: "",
-      service: undefined,
+      // service: undefined,
+      service_type: undefined,
       city: "",
       // companyWebsite: "",
     },
@@ -69,11 +70,11 @@ export function BecomeFilerForm() {
       </FormField>
 
       <FormSelectField
-        id="service"
+        id="service_type"
         label="Service"
-        error={errors.service?.message}
+        error={errors.service_type?.message}
         groups={FILER_SERVICE_GROUPS}
-        {...register("service")}
+        {...register("service_type")}
       />
 
       <FormField label="Email (Optional)" htmlFor="email" error={errors.email?.message}>

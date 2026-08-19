@@ -1,9 +1,6 @@
 // app/api/leads/contact/route.ts
-
-// Same proxy pattern as my auth routes, Next.js talks server-to-server to FastAPI via FASTAPI_INTERNAL_URL, no CORS config needed on the FastAPI side, and this route re-validates instead of trusting the client:
-
 import { NextRequest, NextResponse } from "next/server";
-import { contactFormSchema } from "@/lib/validations/leads";
+import { contactFormSchema } from "@/lib/validations/leads-schema";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -16,29 +13,52 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Honeypot tripped — pretend success, don't tell the bot why
-  if (parsed.data.companyWebsite) {
+  const rawBaseUrl = process.env.FASTAPI_INTERNAL_URL;
+
+  if (!rawBaseUrl) {
+    console.error(
+      "[contact-lead-proxy] FASTAPI_INTERNAL_URL is not set. " +
+        "Check .env.local and restart the dev server.",
+    );
     return NextResponse.json(
-      { ticketId: "N/A", message: "Thanks — your message has been received." },
-      { status: 201 },
+      { message: "Server is misconfigured. Please try again shortly." },
+      { status: 502 },
     );
   }
 
+  const fastapiBaseUrl = rawBaseUrl.replace(/\/+$/, "");
+  const targetUrl = `${fastapiBaseUrl}/api/contact`;
+
   try {
-    // const fastapiRes = await fetch(`${process.env.FASTAPI_INTERNAL_URL}/leads/contact`, {
-    const fastapiRes = await fetch(`${process.env.FASTAPI_INTERNAL_URL}/api/admin/leads`, {
+    const fastapiRes = await fetch(targetUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true",
+      },
       body: JSON.stringify({
-        full_name: parsed.data.fullName,
+        name: parsed.data.fullName,
         email: parsed.data.email,
         phone: parsed.data.phone,
         subject: parsed.data.subject,
         message: parsed.data.message,
-        source_page: "contact-us",
       }),
       cache: "no-store",
     });
+
+    const contentType = fastapiRes.headers.get("content-type") ?? "";
+    if (!contentType.includes("application/json")) {
+      const text = await fastapiRes.text();
+      console.error(
+        `[contact-lead-proxy] Non-JSON response from ${targetUrl} ` +
+          `(status ${fastapiRes.status}):`,
+        text.slice(0, 500),
+      );
+      return NextResponse.json(
+        { message: "Backend returned an unexpected response. Please try again." },
+        { status: 502 },
+      );
+    }
 
     const data = await fastapiRes.json();
 
@@ -49,9 +69,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json(data, { status: 201 });
+    // Backend returns { ticket_id: number, status: string } — translate
+    // into the { ticketId, message } shape lib/api/leads-submit.ts expects,
+    // same as the Become-Filer route does for its own response shape.
+    return NextResponse.json(
+      {
+        ticketId: data.ticket_id != null ? String(data.ticket_id) : "N/A",
+        message: "Thanks — your message has been received. Our team will reach out shortly.",
+      },
+      { status: 201 },
+    );
   } catch (error) {
-    console.error("[contact-lead-proxy]", error);
+    console.error(`[contact-lead-proxy] Failed to reach ${targetUrl}`, error);
     return NextResponse.json(
       { message: "Something went wrong. Please try again." },
       { status: 502 },

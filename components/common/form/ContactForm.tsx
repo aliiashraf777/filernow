@@ -4,8 +4,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { contactFormSchema, ContactFormValues } from "@/lib/validations/leads";
-import { submitContactForm } from "@/lib/api/leads";
+import { contactFormSchema, ContactFormValues } from "@/lib/validations/leads-schema";
+import { submitContactForm } from "@/lib/api/leads-submit";
 import { FormField, inputGenericClass } from "./FormField";
 import { cn } from "@/utils/cn";
 
@@ -26,7 +26,6 @@ export function ContactForm() {
       phone: "",
       subject: "",
       message: "",
-      companyWebsite: "",
     },
   });
 
@@ -44,15 +43,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
-      <input
-        type="text"
-        tabIndex={-1}
-        autoComplete="off"
-        className="absolute left-[-9999px]"
-        aria-hidden="true"
-        {...register("companyWebsite")}
-      />
-
       <FormField label="Full Name" htmlFor="fullName" error={errors.fullName?.message}>
         <input
           id="fullName"
