@@ -44,7 +44,7 @@ const HeroTextbox = ({
     headingClassName,
 }: Props) => {
     return (
-        <div className={cn("pt-[50px] md:container-y-padding flex flex-col gap-4 md:gap-7", className)}>
+        <div className={cn("py-[50px] md:container-y-padding flex flex-col gap-4 md:gap-7", className)}>
             {breadcrumbItems && <Breadcrumb items={breadcrumbItems} />}
 
             <InfoBadge
