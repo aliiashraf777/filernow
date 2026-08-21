@@ -49,6 +49,7 @@ export const blogPosts: IBlogPost[] = [
 
 Tax deductions are legal provisions under the [Income Tax Ordinance, 2001](/), of Pakistan that allow taxpayers to reduce their total gross income. By reducing your [taxable income](/), the final tax liability you owe to the [Federal Board of Revenue (FBR)](/) is lowered significantly. It is crucial to distinguish between direct deductions from **taxable income** [versus tax credits](/), which directly offset your final tax bill.
 
+
 ## Types of Tax Deductions Available in Pakistan
 
 Under current Pakistani tax laws, [salaried individuals](/), [business owners](/), and [freelancers](/) can take advantage of several specific deductions and allowances:

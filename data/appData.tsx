@@ -12,7 +12,10 @@ export interface IMenuDataItem {
     label: string,
     link: string,
     hasMegaMenu?: boolean,
+    action?: ToolsDrawerActionU,
 }
+
+export type ToolsDrawerActionU = 'openCalculator' | 'openFilerStatus'
 
 export const menuData: IMenuDataItem[] = [
     { id: 'menuData1', icon: House, label: 'Home', link: '/' },
@@ -20,7 +23,14 @@ export const menuData: IMenuDataItem[] = [
     { id: 'menuData3', icon: TbReceiptTax, label: 'Tax Rates', link: '/tax-rates' },
     { id: 'menuData4', icon: Info, label: 'About Us', link: '/about' },
     { id: 'menuData5', icon: StickyNotePlus, label: 'Blog', link: '/blog' },
-    { id: 'menuData6', icon: Calculator, label: 'Calculator', link: '' },
+    {
+        id: 'menuData6',
+        icon: Calculator,
+        label: 'Calculator',
+        link: '',
+        action: 'openCalculator',
+    },
+
     { id: 'menuData7', icon: Headset, label: 'Contact', link: '/contact' },
 ]
 
@@ -106,7 +116,8 @@ export interface IQuickToolItem {
     title: string,
     description: string,
     href?: string,
-    action?: 'openCalculator' | 'openFilerStatus',
+    // action?: 'openCalculator' | 'openFilerStatus',
+    action?: ToolsDrawerActionU,
     variant: 'primary' | 'neutral',
 }
 

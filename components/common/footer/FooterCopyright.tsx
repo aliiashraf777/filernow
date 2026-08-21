@@ -15,9 +15,8 @@ const FooterCopyright = (props: Props) => {
             <div className="flex items-center justify-center md:justify-between">
 
                 <RevealOnScroll delay={100}>
-                    <p className="para-tiny">
-                        © {new Date().getFullYear()} FilerNow. All Rights Reserved. Powered by Webtery
-
+                    <p className="para-tiny text-center md:text-left">
+                        FilerNow © {new Date().getFullYear()}. All Rights Reserved. Powered by Webtery
                     </p>
                 </RevealOnScroll>
 

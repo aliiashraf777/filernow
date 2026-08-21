@@ -14,7 +14,7 @@ const incomeTypes: { value: TaxCategory; label: string }[] = [
     { value: "company", label: "Company" },
 ]
 
-const MIN_INCOME = 0
+const MIN_INCOME = '';
 const MAX_INCOME = 20_000_000
 const STEP = 50_000
 
