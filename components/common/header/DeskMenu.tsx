@@ -93,12 +93,30 @@ const DeskMenu = () => {
                         </div>
                     )
                 }
+                if (menu.action) {
+                    return (
+                        <button
+                            type="button"
+                            key={menu.id}
+                            onClick={() => {
+                                if (menu.action === "openCalculator") {
+                                    openCalculator()
+                                }
+                            }}
+                            className={cn(
+                                "para-small text-text-secondary font-medium hover:text-primary default-transition cursor-pointer",
+                                pathname === menu.link && "text-primary",
+                            )}
+                        >
+                            {menu.label}
+                        </button>
+                    )
+                }
                 return (
                     <Link
                         key={menu.id}
                         href={menu.link}
                         className={cn("para-small text-text-secondary font-medium hover:text-primary default-transition", pathname === menu.link && "text-primary")}
-                        onClick={menu.action === "openCalculator" ? openCalculator : ""}
                     >
                         {menu.label}
                     </Link>
