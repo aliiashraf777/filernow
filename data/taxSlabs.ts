@@ -14,9 +14,9 @@ export const taxSlabsByYear: Record<number, TaxYearSlabs> = {
                 { min: 3200001, max: 4100000, rate: 0.19, baseTax: 266000 },
                 { min: 4100001, max: null, rate: 0.22, baseTax: 437000 },
             ],
-            // TODO — source from filernow.com/business-individuals-aops-ty-2026/ before shipping
+            // source from filernow.com/business-individuals-aops-ty-2026/ before shipping
             business: [],
-            // TODO — source from filernow.com company TY2026 page before shipping
+            // source from filernow.com company TY2026 page before shipping
             company: [],
         },
         surcharge: {
@@ -26,7 +26,7 @@ export const taxSlabsByYear: Record<number, TaxYearSlabs> = {
         },
     },
 
-    // TODO — 2020 through 2025: pull from filernow.com/salaried-individuals-ty-{year}/
+    // 2020 through 2025: pull from filernow.com/salaried-individuals-ty-{year}/
     // (and the equivalent business-individuals-aops-ty-{year} / company pages) before
     // enabling these years in the dropdown. Do not guess — FBR revises brackets most budgets.
 }

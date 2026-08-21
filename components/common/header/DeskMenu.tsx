@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { menuData } from "@/data/appData"
 import { cn } from "@/utils/cn"
 import ServicesMegaMenu from "./ServicesMegaMenu"
+import { useCalculatorContext } from "@/context/CalculatorContext"
 
 const CLOSE_DELAY_MS = 150
 
@@ -39,6 +40,8 @@ const DeskMenu = () => {
     }, [isMegaMenuOpen])
 
     useEffect(() => () => { if (closeTimer.current) clearTimeout(closeTimer.current) }, [])
+
+    const { openCalculator } = useCalculatorContext();
 
     return (
         <div className="hidden md:flex items-center gap-9">
@@ -95,6 +98,7 @@ const DeskMenu = () => {
                         key={menu.id}
                         href={menu.link}
                         className={cn("para-small text-text-secondary font-medium hover:text-primary default-transition", pathname === menu.link && "text-primary")}
+                        onClick={menu.action === "openCalculator" ? openCalculator : ""}
                     >
                         {menu.label}
                     </Link>

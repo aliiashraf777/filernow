@@ -132,7 +132,7 @@ const FilerStatusDrawer = () => {
 
     return (
         <Dialog open={isFilerStatusOpen} onOpenChange={handleClose}>
-            <DialogContent className="max-w-[480px] sm:max-w-[480px] w-[92vw] p-0 gap-0 overflow-hidden rounded-brand-16 border border-border-clr/10 shadow-2xl">
+            <DialogContent className="max-w-[520px] sm:max-w-[520px] w-[92vw] h-[520px]x p-0 gap-0 overflow-hidden rounded-brand-16 border border-border-clr/10 shadow-2xl">
                 <div className="relative bg-primary px-6 py-5 flex items-center justify-between gap-4">
                     <span className="grid place-items-center w-12 h-12 rounded-brand-16 bg-white/15 text-white shrink-0">
                         <ShieldCheck size={22} />
@@ -164,7 +164,7 @@ const FilerStatusDrawer = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="e.g. 35202-1234567-1 or Tahir Amin"
+                                    placeholder="e.g. 35202-1234567-1 / Tahir Amin / Filernow"
                                     value={input}
                                     onChange={(e) => {
                                         setInput(e.target.value)
@@ -184,7 +184,7 @@ const FilerStatusDrawer = () => {
                                 )}
 
                                 {dropdownVisible && (
-                                    <div className="absolute z-20 top-full left-0 right-0 mt-1.5 max-h-72 overflow-y-auto rounded-brand-8 border border-border-clr/40 bg-white shadow-xl">
+                                    <div className="absolute z-20 top-full left-0 right-0 mt-1.5 max-h-72 overflow-y-scroll pb-[150px] rounded-brand-8 border border-border-clr/40 bg-white shadow-xl">
                                         {suggestionsLoading && (
                                             <div className="flex items-center gap-2 px-4 py-3 para-small text-text-secondary">
                                                 <Loader2 size={14} className="animate-spin" />
@@ -205,7 +205,7 @@ const FilerStatusDrawer = () => {
                                                         <button
                                                             type="button"
                                                             onClick={() => handleSelectSuggestion(record)}
-                                                            className="w-full text-left px-4 py-3 hover:bg-border-clr/10 default-transition"
+                                                            className="w-full text-left px-4 py-3 cursor-pointer hover:bg-border-clr/10 default-transition"
                                                         >
                                                             <p className="para-small font-bold text-text-dark truncate">
                                                                 {record.name}
@@ -239,7 +239,7 @@ const FilerStatusDrawer = () => {
                                                         )}
 
                                                         {isExpanded && (
-                                                            <ul className="px-4 pb-3 flex flex-col gap-1">
+                                                            <ul className="px-4 pb-10 flex flex-col gap-1">
                                                                 {record.businessNames
                                                                     .filter((_, i) => i !== matchedIndex)
                                                                     .map((b) => (

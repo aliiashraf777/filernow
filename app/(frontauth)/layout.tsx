@@ -8,7 +8,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <div
                 className="hidden items-center justify-center p-12 lg:flex"
                 style={{
-                    background: "radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #C8102E 100%)",
+                    background: "radial-gradient(50% 50% at 50% 50%, var(--text-tertiary) 0%, var(--brand-primary) 100%)",
                 }}
             >
                 <Image
