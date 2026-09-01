@@ -126,7 +126,7 @@ export default async function BlogDetailPage({ params }: Props) {
             <BeforeFooter
                 heading="Ready to Get Started?"
                 para="Join thousands of clients and start your journey today. Register now for the best experience, or reach out on WhatsApp if you have any questions."
-                primaryLabel="Register Now"
+                primaryLabel="Become A Filer"
                 primaryHref="/become-filer"
             // secondaryLabel="Talk To An Expert"
             // secondaryHref="https://wa.me/923041110555"

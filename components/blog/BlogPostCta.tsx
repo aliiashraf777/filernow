@@ -40,8 +40,8 @@ const BlogPostCta = (props: Props) => {
                     Join thousands of learners and start your journey today. Register now for the best experience, or reach out on WhatsApp if you have any questions.
                 </p>
                 <LinkBtn
-                    href="/register-now"
-                    label="Register now"
+                    href="/become-filer"
+                    label="Send Us Query"
                     icon={<ArrowRight size={20} />}
                     className="rounded-full orbit-pingx arc-breathe"
                 />

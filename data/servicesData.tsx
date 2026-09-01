@@ -104,7 +104,7 @@ export const servicesData: Record<string, IServiceDetail> = {
         //     { label: "Talk to an Expert", icon: <FaWhatsapp size={18} className="text-secondary" />, variant: "white", href: "https://wa.me/923041110555", },
         // ],
         needProvidedHeading: "What is Needed & Provided",
-        needProvidedPara: "Get your NTN easily without hassle — minimal documents, fast turnaround.",
+        needProvidedPara: "Get your NTN easily without hassle - minimal documents, fast turnaround.",
         needProvidedBoxes: [
             {
                 icon: <FileText size={24} className="text-primary" />,

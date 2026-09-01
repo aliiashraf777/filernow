@@ -13,8 +13,8 @@ const RelatedArticles = ({ posts }: { posts: IBlogPost[] }) => {
                     <BlogListItem
                         key={post.id}
                         post={post}
-                        thumbSizeClass="h-16 w-16"
-                        className="bg-background hover:bg-background border border-border-clr"
+                        thumbSizeClass="h-[100px] w-[100px]"
+                        className="max-sm:p-2 bg-background hover:bg-background border border-border-clr"
                     />
                 )}
             </div>

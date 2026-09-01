@@ -31,12 +31,12 @@ const HomeBlogs = async () => {
             </RevealOnScroll>
 
             {featured && (
-                <div className="grid grid-cols-1 gap-7 lg:grid-cols-[1.05fr_1fr]">
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1.05fr_1fr]">
                     <RevealOnScroll delay={150}>
                         <BlogCard post={featured} />
                     </RevealOnScroll>
                     <RevealOnScroll delay={250}>
-                        <div className="flex h-full flex-col justify-between gap-4 sm:gap-7">
+                        <div className="flex h-full flex-col justify-between gap-4 sm:gap-4">
                             {listPosts.map((post) => <BlogListItem key={post.id} post={post} />)}
                         </div>
                     </RevealOnScroll>

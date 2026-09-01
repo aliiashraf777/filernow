@@ -13,7 +13,7 @@ type Props = {
     className?: string,
 }
 
-const BlogListItem = ({ post, thumbSizeClass = "h-[88px] w-[88px] sm:h-[224px] sm:w-[224px]", className }: Props) => {
+const BlogListItem = ({ post, thumbSizeClass = "h-[88px] w-[88px] sm:h-[165px] sm:w-[165px]", className }: Props) => {
     const { slug, title, category, coverImage, coverImageAlt, publishedAt } = post
     return (
         <Link
@@ -21,7 +21,7 @@ const BlogListItem = ({ post, thumbSizeClass = "h-[88px] w-[88px] sm:h-[224px] s
             className={cn("group flex items-center gap-4 rounded-brand-12 border border-transparent default-transition hover:bg-card-bg-clr sm:p-3", className)}
         >
             <div className={cn("relative sheen-sweep-hover shrink-0 overflow-hidden rounded-brand-8", thumbSizeClass)}>
-                <Image src={coverImage} alt={coverImageAlt} fill sizes="224px" className="object-cover default-transition group-hover:scale-105" />
+                <Image src={coverImage} alt={coverImageAlt} fill sizes="165px" className="object-cover default-transition group-hover:scale-105" />
             </div>
             <div className="flex min-w-0 flex-col gap-1.5">
                 <div className="flex items-center gap-3">

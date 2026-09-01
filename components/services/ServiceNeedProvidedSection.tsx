@@ -49,8 +49,8 @@ const ServiceNeedProvidedSection = ({ heading, para, boxes }: Props) => (
 
                     <div className="flex flex-col gap-5 w-full lg:w-56 shrink-0">
                         <LinkBtn
-                            href="/become-a-filer"
-                            label="Become A Filer"
+                            href="/become-filer"
+                            label="Send Us Query"
                             icon={<FileBadge size={16} />}
                             variant="primary"
                             size="full"
